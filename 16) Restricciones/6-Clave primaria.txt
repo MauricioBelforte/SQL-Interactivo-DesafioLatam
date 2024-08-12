@@ -1,0 +1,64 @@
+6/11 Clave primaria
+
+Ideas clave
+Existen distintos tipos de restricciones que se pueden aplicar a las columnas de una tabla como NOT NULL, UNIQUE y CHECK.
+La restricción Primary Key impide que se ingresen valores nulos y asegura que no haya duplicados en una columna específica. Para efectos prácticos, podemos decir que es una combinación de Unique y Not Null
+¿Qué es una clave primaria?
+La clave primaria, o en inglés PRIMARY KEY es una restricción que sirve para identificar de forma única cada registro en una tabla. Por ejemplo supongamos que tenemos una tabla llamada boletas con los siguientes registros:
+
+id	monto de la boleta	fecha de emision
+1	10.000			2021-10-01
+2	12.000			2021-10-02
+3	16.000			2021-10-03
+
+Y queremos buscar la boleta con id 2. Si no tuvieramos una clave primaria, podríamos tener dos boletas con el mismo id, y no sabríamos cuál de las dos es la que queremos, o podríamos tener boletas con id nulo, y no sabríamos cuál es la boleta que buscamos.
+
+La restricción de primary key nos asegura esto no suceda.
+
+Cuando tenemos una clave primaria, tenemos certeza de que podemos buscar cualquier registro en la base de datos y luego modificarlo o eliminarlo, y no habrá ningún otro registro modificado o eliminado que el seleccionado. Esto nos permite cuidar la integridad de los datos.
+
+Agregar una clave primaria a una tabla nueva
+Para agregar una clave primaria a una tabla nueva, simplemente tenemos que especificarlo en la definición de la columna. Por ejemplo:
+
+CREATE TABLE boletas (
+    id INT PRIMARY KEY,
+    monto_de_la_boleta REAL,
+    fecha_de_emision DATE
+);
+Ejercicio
+Crea una tabla llamada posts con las siguientes columnas:
+
+Column Name	    Data Type	Constraints
+id			INT	PRIMARY KEY
+title			TEXT	
+content			TEXT	
+
+inserta los siguientes registros:
+
+id	title	content
+1	Introducción	¡Bienvenido al mundo de la programación!
+2	Primeros Pasos	Sumérgete en los conceptos básicos de la programación.
+3	Temas Avanzados	Explora conceptos y técnicas avanzadas en programación.
+Pista: para poder ingresar las dos queries requeridas, recuerda añadir punto y coma al final de cada una.
+
+Si quieres poner a prueba la clave primaria puedes intentar insertar un id nulo o un id que ya hayas ingresado.
+
+
+RESOLUCIÓN:
+
+CREATE TABLE posts (
+    id INT  PRIMARY KEY,
+    title TEXT,
+    content TEXT
+);
+
+INSERT INTO posts (id,title,content) VALUES (1,'Introducción', '¡Bienvenido al mundo de la programación!');
+INSERT INTO posts (id,title,content) VALUES (2,'Primeros Pasos', 'Sumérgete en los conceptos básicos de la programación.');
+INSERT INTO posts (id,title,content) VALUES (3, 'Temas Avanzados', 'Explora conceptos y técnicas avanzadas en programación.');
+
+
+Resultado esperado
+id	title				content
+1	Introducción			¡Bienvenido al mundo de la programación!
+2	Primeros Pasos			Sumérgete en los conceptos básicos de la programación.
+3	Temas Avanzados			Explora conceptos y técnicas avanzadas en programación.

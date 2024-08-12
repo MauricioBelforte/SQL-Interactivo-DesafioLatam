@@ -1,0 +1,107 @@
+11/11 Pk y fks
+
+Los conceptos de clave primaria y clave foránea son fundamentales para el diseño de bases de datos y los ocuparemos tan frecuentemente que los abreviare como PK Primary Key y FK Foreign Key respectivamente.
+
+Con la clave primaria podemos identificar de forma única cada registro de una tabla, y con la clave foránea podemos relacionar dos tablas entre si y evitar que existan registros que no tengan una relación válida.
+
+PK = Primary Key
+FK = Foreign Key
+A partir de ahora utilizaremos frecuentemente estas abreviaciones. También veremos que casi todas las tablas tendrán una clave primaria (PK). Esto se debe a que la clave primaria nos ayuda a mantener la integridad de los datos, y nos permite identificar de forma única cada registro de una tabla.
+
+Una práctica común en el diseño de bases de datos es utilizar una columna llamada id como clave primaria. Esta columna es de tipo INTEGER y tiene la restricción PRIMARY KEY. Además, es común que esta columna sea autoincremental, es decir, que el valor de la columna se incremente automáticamente cada vez que se inserta un nuevo registro. Pero esto no es una obligación. Definir una clave primaria es una decisión de diseño, y en algunos casos puede ser más conveniente utilizar otra columna como clave primaria.
+
+Ejercicio
+Se tiene la tabla transacciones y la tabla usuarios con la siguiente estructuras:
+
+transacciones
+
+Columna		Tipo de dato		Restricciones
+id		INTEGER			PRIMARY KEY
+monto		REAL	
+usuario_id	INTEGER			FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+
+
+usuarios
+
+Columna		Tipo de dato	Restricciones
+id		INTEGER		PRIMARY KEY
+nombre		TEXT	
+apellido	TEXT	
+
+
+Con los siguientes datos:
+
+transacciones
+
+id	monto	usuario_id
+1	100	1
+2	200	2
+3	300	1
+
+
+usuarios
+
+id	nombre	apellido
+1	John	Doe
+2	Jane	Smith
+
+
+1. En este ejercicio primero intentaremos crear una transacción con un usuario que no existe para observar el error.
+
+2. Intentaremos borrar un usuario que tiene transacciones asociadas para observar el error.
+
+3. Luego eliminaremos nuestras consultas anteriores y modificaremos la tabla de transacciones para eliminar la clave foránea. Solo se debe eliminar la clave foránea, no la columna.
+
+TIP: Esto requiere crear una tabla temporal, copiar los datos de la tabla original a la tabla temporal, borrar la tabla original, y renombrar la tabla temporal con el nombre de la tabla original.
+
+4. Finalmente se deben asociar las transacciones al usuario con id 3. El cual no existe y la idea es demostrar que sin la FK podemos insertar transacciones sin usuarios asociados.
+
+Los puntos 1 y 2 son para observar que sucede. Para lograr la respuesta correcta tienes que realizar los puntos 3 y 4 en el editor.
+
+
+RESOLUCIÓN:
+
+1. En este ejercicio primero intentaremos crear una transacción con un usuario que no existe para observar el error.
+1) INSERT INTO transacciones (monto,usuario_id) VALUES (400,3);
+
+Feedback
+Resultado Incorrecto
+Te invitamos a seguir el siguiente consejo:
+
+El problema en tu código radica en que no has eliminado la clave foránea de la tabla **transacciones** antes de intentar insertar la transacción con `usuario_id` 3. La restricción de la clave foránea impide que se inserten registros en la tabla **transacciones** que hagan referencia a un `usuario_id` que no existe en la tabla **usuarios**. Para que tu inserción funcione como esperas, necesitas primero realizar el paso 3, que consiste en eliminar la clave foránea de la tabla **transacciones**. Aquí hay un resumen de cómo debes proceder: 1. **Crea una tabla temporal** sin la clave foránea. 2. **Copia los datos de la tabla original** a la tabla temporal. 3. **Elimina la tabla original**. 4. **Renombra la tabla temporal** para que tenga el nombre de la tabla original. Una vez que hayas hecho esto, podrás ejecutar tu inserción sin restricciones de clave foránea y el resultado será el esperado. Si sigues estos pasos, deberías poder insertar el registro con `usuario_id` 3 sin problemas. Asegúrate de haber completado todos los pasos necesarios antes de realizar la inserción.
+
+
+2. Intentaremos borrar un usuario que tiene transacciones asociadas para observar el error.
+2) DELETE FROM usuarios WHERE id=1;
+
+Feedback
+Resultado Incorrecto
+Te invitamos a seguir el siguiente consejo:
+
+El problema en tu código es que estás intentando eliminar un usuario que tiene transacciones asociadas. Al hacerlo, la base de datos no permite que se elimine el registro en la tabla **usuarios** debido a la restricción de clave foránea. Esto es el comportamiento esperado, ya que tienes transacciones que dependen de ese usuario. Para solucionar este problema y obtener el resultado que esperas, debes primero eliminar o modificar las transacciones que están asociadas al usuario que deseas eliminar. Aquí hay un enfoque alternativo que podrías considerar: 1. Primero, actualiza las transacciones asociadas al usuario que deseas eliminar (en este caso, el usuario con **id = 1**) para que apunten a otro usuario (en este caso, el usuario con **id = 3**, que no existe, pero es solo un ejemplo). 2. Luego, podrás eliminar el usuario. Por lo tanto, tu código sería algo como: ```sql -- Primero, actualizamos las transacciones para asociarlas a un nuevo usuario UPDATE transacciones SET usuario_id = 3 WHERE usuario_id = 1; -- Ahora puedes eliminar el usuario sin problemas DELETE FROM usuarios WHERE id = 1; ``` Con este enfoque, puedes modificar las transacciones para que ya no tengan un usuario asociado que impida la eliminación, y luego proceder a eliminar el usuario. Recuerda que si la clave foránea está activa, no podrás simplemente eliminar el usuario sin antes resolver las dependencias (es decir, las transacciones asociadas a ese usuario).
+
+
+3. Luego eliminaremos nuestras consultas anteriores y modificaremos la tabla de transacciones para eliminar la clave foránea. Solo se debe eliminar la clave foránea, no la columna.
+
+3)//Elimine la restriccion que decia FOREIGN KEY
+
+CREATE TABLE transaccionesTemporal (
+    id INTEGER PRIMARY KEY,
+    monto REAL,
+    usuario_id INTEGER
+);
+
+INSERT INTO transaccionesTemporal (id,monto,usuario_id) SELECT * FROM transacciones;
+
+
+4. Finalmente se deben asociar las transacciones al usuario con id 3. El cual no existe y la idea es demostrar que sin la FK podemos insertar transacciones sin usuarios asociados.
+4)UPDATE transaccionesTemporal SET usuario_id=3;
+
+
+DROP TABLE transacciones;
+
+ALTER TABLE transaccionesTemporal RENAME TO transacciones;
+
+
+
+

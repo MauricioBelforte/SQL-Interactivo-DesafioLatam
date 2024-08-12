@@ -1,0 +1,20 @@
+9/21 Seleccionando filas bajo una condición de igualdad (tipo de dato string) parte 2
+
+
+Es importante recordar que al trabajar con strings, la comparación es sensible a mayúsculas y minúsculas. Por lo tanto, 'Camiseta' y 'camiseta' se considerarán diferentes valores en la comparación. Si deseamos realizar una comparación sin considerar la distinción entre mayúsculas y minúsculas, se pueden utilizar funciones o cláusulas específicas proporcionadas por el motor de base de datos.
+
+Ejercicio
+Selecciona todos los productos de la tabla productos que tengan el nombre 'Silla de Oficina'.
+
+Puedes probar con 'c' y observar que no obtendrás ningún resultado.
+
+
+RESOLUCIÓN:
+
+SELECT * FROM productos WHERE nombre='Silla de Oficina';
+
+
+Resultado esperado
+
+id	nombre			precio	descuento
+1	Silla de Oficina	100	0

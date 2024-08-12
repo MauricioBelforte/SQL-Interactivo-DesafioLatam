@@ -1,0 +1,23 @@
+3/21 Operador mayor o igual que
+
+El operador mayor o igual que (>=) se utiliza para seleccionar registros en los que el valor de una columna sea mayor o igual a un valor específico. Por ejemplo, podemos seleccionar todos los productos cuyo precio sea mayor o igual a $100 utilizando la siguiente consulta:
+
+SELECT * FROM productos WHERE precio >= 100;
+
+Ejercicio
+Selecciona todos los registros de la tabla productos en los que el valor de la columna 'precio' sea mayor o igual a 50.
+
+Si mostraras sólo los productos con precio a mayor a 50, se mostaría la Lámpara de escritorio?
+
+
+RESOLUCIÓN:
+SELECT * FROM productos WHERE precio>=50;
+
+
+
+id	nombre			precio	descuento
+1	Silla de Oficina	100	0
+2	Mesa de Oficina	200	5
+3	Lámpara de Escritorio	50	10
+4	Monitor de Computadora	150	0
+5	Librero de Oficina	300	15

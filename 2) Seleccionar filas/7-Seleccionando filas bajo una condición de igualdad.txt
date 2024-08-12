@@ -1,0 +1,22 @@
+7/21 Seleccionando filas bajo una condición de igualdad
+
+
+Para seleccionar un valor en específico utilizaremos el operador =
+
+Ejemplo:
+
+SELECT * FROM productos WHERE precio = 100;
+
+Ejercicio
+Selecciona el nombre del usuario de la tabla usuarios con id igual a 2
+
+
+RESOLUCIÓN:
+
+SELECT nombre FROM usuarios WHERE id=2;
+
+
+
+Resultado esperado
+nombre
+María

@@ -1,0 +1,34 @@
+1/6 Nuestra primera tabla
+
+Hasta este punto, hemos aprendido cómo realizar consultas en tablas predefinidas, e incluso cómo insertar datos a las tablas, pero ¿cómo creamos nuestras propias tablas?
+
+Para crear una tabla en SQL, se utiliza la sentencia CREATE TABLE de la siguiente forma:
+
+CREATE TABLE nombre_tabla (nombre_columna1 tipo_de_dato) 
+Esta sentencia permite definir la estructura de la tabla, incluyendo el nombre de las columnas y sus tipos de datos. Veamos un ejemplo de cómo crear una tabla de productos que incluye diferentes tipos de datos para las columnas:
+
+CREATE TABLE productos (nombre TEXT);
+Luego, una vez creada la tabla, podemos insertar datos tal como aprendimos en ejercicios anteriores:
+
+INSERT INTO productos values   ('Ipad Pro 2022'),  ('Iphone 13 Pro Max'),  ('Macbook Pro 2023');
+Ejercicio
+Crea una tabla llamada alumnos que almacene una columan nombre de tipo texto
+
+Columna	Tipo de dato
+nombre	texto
+
+Inserta un registro dentro de la tabla creada utilizado los siguientes datos:
+
+nombre: Lucía
+Pista: Para poder ingresar las dos queries requeridas, recuerda añadir punto y coma al final de cada una.
+
+
+RESOLUCIÓN:
+CREATE TABLE alumnos (nombre TEXT);
+INSERT INTO alumnos VALUES ('Lucía')
+
+
+Resultado esperado
+
+nombre
+Lucía

@@ -1,0 +1,23 @@
+3/3 Obtener el nombre del concierto con más entradas vendidas
+
+
+Se tiene una base de datos con la tabla conciertos en la cual se almacena información sobre cada concierto, incluyendo el nombre del concierto y la cantidad de entradas vendidas. Los datos dentro de la base de datos corresponden a la siguiente tabla.
+
+nombre_concierto	entradas_vendidas
+Concierto A		150
+Concierto B		200
+Concierto C		180
+Concierto D		250
+
+Encuentra el nombre del concierto que ha vendido la mayor cantidad de entradas (utiliza ORDER BY y LIMIT).
+
+
+RESOLUCIÓN:
+
+SELECT nombre_concierto, entradas_vendidas FROM conciertos ORDER BY entradas_vendidas DESC LIMIT 1;
+
+
+Resultado esperado
+
+nombre_concierto	entradas_vendidas
+Concierto D		250

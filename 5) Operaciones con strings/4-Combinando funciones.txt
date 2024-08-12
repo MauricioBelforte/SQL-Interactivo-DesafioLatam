@@ -1,0 +1,28 @@
+4/10 Combinando funciones
+
+
+En SQL podemos combinar funciones. Veamos un ejemplo combinando LOWER y TRIM :
+
+SELECT LOWER(TRIM(email)) as email_limpios from usuarios;
+
+Esta consulta selecciona los correos electrónicos de la tabla "usuarios", los convierte a minúsculas y elimina cualquier espacio en blanco adicional alrededor de ellos. El resultado será una lista de correos electrónicos "limpios" y en minúsculas.
+
+Ejercicio
+Se tiene una tabla de usuarios con las columnas nombre, apellido, email y teléfono. Los nombres, apellidos y correos poseen espacios en blanco tanto al inicio como al final y algunos de ellos tienen mayúsculas.
+
+Utiliza lo aprendido para seleccionar los nombres, emails y apellidos, limpiando cada uno de estos campos. Para que el resultado sea correcto debes ocupar los alias nombre_limpio, apellido_limpio e email_limpio respectivamente.
+
+
+RESOLUCIÓN:
+
+SELECT LOWER(TRIM(nombre)) AS nombre_limpio, LOWER(TRIM(apellido)) AS apellido_limpio , LOWER(TRIM(email)) AS email_limpio FROM usuarios;
+
+
+Resultado esperado
+
+nombre_limpio		apellido_limpio		email_limpio
+juan			pérez			juanperez@gmail.com
+maría			garcía			mariagarcia@hotmail.com
+pedro			lópez			pedrolopez@yahoo.com
+lucía			sánchez			luciasanchez@outlook.com
+jorge			martínez		jorgemartinez@gmail.com

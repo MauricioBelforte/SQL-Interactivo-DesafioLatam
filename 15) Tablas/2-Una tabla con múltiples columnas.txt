@@ -1,0 +1,28 @@
+2/6 Una tabla con múltiples columnas
+
+Al momento de crear una tabla podemos especificar múltiples columnas, cada una con su nombre y tipo de dato. Por ejemplo, si queremos crear una tabla de productos que incluya el nombre, descripción y precio de cada producto, podemos hacerlo de la siguiente forma:
+
+CREATE TABLE productos (nombre TEXT, descripcion TEXT, precio INT);
+Ejercicio
+Crea una tabla llamada alumnos con las siguientes columnas:
+
+Columna		Tipo de dato
+nombre		texto
+apellido	texto
+telefono	texto
+
+Inserta un registro dentro de la tabla creada utilizado los siguientes datos:
+
+nombre: Lucía
+apellido: Sánchez
+telefono: 12345678
+Pista: para poder ingresar las dos queries requeridas, recuerda añadir punto y coma al final de cada una.
+
+RESOLUCIÓN:
+CREATE TABLE alumnos (nombre TEXT, apellido TEXT, telefono TEXT);
+INSERT INTO alumnos (nombre,apellido,telefono) VALUES ('Lucía','Sánchez','12345678')
+
+
+Resultado esperado
+nombre	apellido	telefono
+Lucía	Sánchez		12345678

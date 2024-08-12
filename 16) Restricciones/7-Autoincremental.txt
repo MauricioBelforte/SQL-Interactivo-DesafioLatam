@@ -1,0 +1,78 @@
+7/11 Autoincremental
+
+
+Ideas clave
+La restricción Primary Key impide que se ingresen valores nulos y asegura que no haya duplicados en una columna específica. Para efectos prácticos, podemos decir que es una combinación de Unique y Not Null.
+Los campos autoincrementales nos permiten generar un valor único de forma automática para cada registro que insertemos en una tabla.
+Si un campo de clave primaria es un número entero, se convierte automáticamente en un campo autoincremental en SQLITE.
+¿Qué son los campos autoincrementales?
+Los campos autoincrementales son campos que generan un valor único de forma automática para cada registro que insertemos en una tabla. Usualmente, el incremento es de 1 en 1.
+
+Entonces si tenemos una tabla como la siguiente:
+
+id	monto de la boleta	fecha de emision
+1	10.000			2021-10-01
+2	12.000			2021-10-02
+3	16.000			2021-10-03
+
+Y agregamos un nuevo registro sin especificar el valor del campo id, la base de datos se encargará de generar un valor único para ese campo, que para este caso sería 4.
+
+Cómo ingresar un nuevo registro con un campo autoincremental
+Para ingresar un nuevo registro en la tabla, simplemente omitimos el campo id y la base de datos se encargará de asignarle un valor único.
+
+Ejemplo:
+
+INSERT INTO boletas (monto_de_la_boleta, fecha_de_emision) VALUES (20.000, '2021-10-04');
+Observa que no estamos ingresando el campo id en la query.
+
+Luego, si seleccionamos todos los registros de la tabla de la siguiente forma:
+
+SELECT * FROM boletas;
+Veremos que el campo id del nuevo registro tiene un valor único y mayor al de los registros anteriores.
+
+id	monto de la boleta	fecha de emision
+1	10.000			021-10-01
+2	12.000			2021-10-02
+3	16.000			2021-10-03
+4	20.000			2021-10-04
+
+Un campo definido como INTEGER (o INT) + PRIMARY KEY se convierte automáticamente en un campo autoincremental en SQLITE.
+
+Ejercicio
+Crea una tabla llamada usuarios con las siguientes columnas:
+
+Columna		Tipo de dato	Restricciones
+id		INTEGER		PRIMARY KEY
+nombre		TEXT		NOT NULL
+fecha_creacion	DATE	
+
+Luego, vamos a insertar los siguientes registros:
+
+nombre	fecha_creacion
+Ana	2024-01-01
+Gonzalo	2024-01-02
+Juan	2024-01-03
+María	2024-01-04
+Pista: No ingreses los ids, la base de datos se encargará de generarlos automáticamente.
+
+
+RESOLUCIÓN:
+
+CREATE TABLE usuarios (
+    id INTEGER PRIMARY KEY,
+    nombre TEXT NOT NULL,
+    fecha_creacion DATE
+);
+
+INSERT INTO usuarios (nombre,fecha_creacion) VALUES('Ana','2024-01-01');
+INSERT INTO usuarios (nombre,fecha_creacion) VALUES('Gonzalo','2024-01-02');
+INSERT INTO usuarios (nombre,fecha_creacion) VALUES('Juan','2024-01-03');
+INSERT INTO usuarios (nombre,fecha_creacion) VALUES('María','2024-01-04');
+
+
+Resultado esperado
+id	nombre		fecha_creacion
+1	Ana		2024-01-01
+2	Gonzalo		2024-01-02
+3	Juan		2024-01-03
+4	María		2024-01-04

@@ -1,0 +1,34 @@
+4/5 Editar todos los registros utilizando where
+
+Si queremos editar solamente algunas filas de nuestra tabla, podemos utilizar UPDATE en conjunto con WHERE. De esta forma solo se modificarán los registros que cumplan con la condición especificada.
+
+UPDATE nombre_tabla SET nombre_columna = nuevo_valor WHERE condicion;
+
+Supongamos que gestionamos una tabla llamada empleados que contiene información sobre los empleados de una empresa. Entre las columnas se encuentran id_empleado, nombre, salario y departamento. Si deseamos aumentar el salario en un 15% solamente para los empleados que trabajan en el departamento de "Ventas", podríamos emplear la instrucción UPDATE junto con WHERE de la siguiente manera:
+
+UPDATE empleados SET salario = salario * 1.15 WHERE departamento = 'Ventas';
+
+Es importante ser precavido al elegir la condición de filtrado para tus filas. De esta manera, te aseguras de no alterar accidentalmente datos equivocados.
+
+Ejercicio
+Se tiene una tabla usuarios con los siguientes datos:
+
+ID	NOMBRE	APELLIDO	EMAIL				TELEFONO
+1	Juan	Pérez		juanperez@gmail.com		555-1234
+2	María	García		mariagarcia@hotmail.com		555-5678
+3	Pedro	López		pedrolopez@yahoo.com		555-9876
+4	Lucía	López		luciasanchez@outlook.com	555-5555
+5	Jorge	Martínez	jorgemartinez@gmail.com		555-4321
+
+Asignales el telefono 123-456 al usuario con id 4.
+
+RESOLUCIÓN:
+UPDATE usuarios SET TELEFONO='123-456' WHERE ID=4
+
+Resultado esperado
+ID	NOMBRE	APELLIDO	EMAIL				TELEFONO
+1	Juan	Pérez		juanperez@gmail.com		555-1234
+2	María	García		mariagarcia@hotmail.com		555-5678
+3	Pedro	López		pedrolopez@yahoo.com		555-9876
+4	Lucía	López		luciasanchez@outlook.com	123-456
+5	Jorge	Martínez	jorgemartinez@gmail.com		555-4321

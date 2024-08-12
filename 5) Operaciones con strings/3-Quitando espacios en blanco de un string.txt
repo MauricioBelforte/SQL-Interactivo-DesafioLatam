@@ -1,0 +1,27 @@
+3/10 Quitando espacios en blanco de un string
+
+En SQLite la función TRIM() se utiliza para eliminar los espacios en blanco iniciales y finales de un string.
+
+Por ejemplo, si tenemos una tabla de productos con una columna 'nombre' que contiene espacios en blanco al inicio y final de cada nombre, podemos utilizar la siguiente consulta para quitar esos espacios:
+
+SELECT TRIM(nombre) FROM productos;
+
+Esto nos devolverá los nombres de los productos sin los espacios en blanco al inicio y final.
+
+Ejercicio
+Se tiene una tabla de usuarios con las columnas nombre, apellido, email y teléfono. Los nombres y correos poseen espacios en blanco tanto al inicio como al final de su valor. Utiliza la función TRIM() para seleccionar los nombres e emails y quitar los espacios en blanco.
+
+
+RESOLUCIÓN:
+
+SELECT TRIM(nombre),TRIM(email) FROM usuarios; 
+
+
+Resultado esperado
+
+TRIM(nombre)	TRIM(email)
+Juan		juanperez@gmail.com
+María		mariagarcia@hotmail.com
+Pedro		pedrolopez@yahoo.com
+Lucía		luciasanchez@outlook.com
+Jorge		jorgemartinez@gmail.com

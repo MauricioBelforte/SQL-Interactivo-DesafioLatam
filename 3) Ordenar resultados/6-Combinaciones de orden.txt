@@ -1,0 +1,32 @@
+6/7 Combinaciones de orden
+
+En algunas situaciones vamos a querer ordenar en función de múltiples columnas. Por ejemplo, si queremos obtener una lista de todos los productos ordenados por su stock y luego por su color, podemos seleccionar todos los campos de la tabla y ordenarlos primero por el campo stock y luego por el campo color de la siguiente manera:
+
+SELECT * FROM productos ORDER BY stock ASC, color ASC
+
+Ejercicio
+Se tiene la tabla empleados con la siguiente información:
+
+id	Nombre	Salario
+1	Juan Pérez	4800
+2	María López	5500
+3	Pedro García	5500
+4	Ana Martínez	5500
+5	Luis Rodríguez	4800
+
+Selecciona una lista de todos los empleados ordenados por su salario y por su nombre.
+
+
+RESOLUCIÓN:
+
+SELECT * FROM empleados ORDER BY salario, nombre;
+
+
+Resultado esperado
+
+id	nombre		salario
+1	Juan Pérez	4800
+5	Luis Rodríguez	4800
+4	Ana Martínez	5500
+2	María López	5500
+3	Pedro García	5500

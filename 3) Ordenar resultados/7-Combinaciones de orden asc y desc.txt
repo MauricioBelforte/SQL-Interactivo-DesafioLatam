@@ -1,0 +1,32 @@
+7/7 Combinaciones de orden asc y desc
+
+
+Supongamos que queremos obtener una lista de todos los productos cuyo precio sea mayor a $100 y ordenarlos primero por su precio de forma descendente y luego por su nombre de forma ascendente. Podemos hacer esto utilizando la siguiente consulta:
+
+SELECT * FROM productos WHERE precio > 100 ORDER BY precio DESC, nombre ASC;
+
+Ejercicio
+Se tiene la tabla productos con la siguiente información:
+
+id	nombre		stock	color
+1	Silla		10	Rojo
+2	Mesa		5	Verde
+3	Lámpara		15	Azul
+4	Escritorio	8	Blanco
+5	Estantería	12	Negro
+
+Selecciona todos los registros de la tabla 'productos' y ordénalos primero por 'stock' de forma descendente y luego por 'color' de forma ascendente.
+
+
+RESOLUCIÓN:
+
+SELECT * FROM productos ORDER BY stock DESC , color ASC;
+
+
+Resultado esperado
+id	nombre		stock	color
+3	Lámpara		15	Azul
+5	Estantería	12	Negro
+1	Silla		10	Rojo
+4	Escritorio	8	Blanco
+2	Mesa		5	Verde

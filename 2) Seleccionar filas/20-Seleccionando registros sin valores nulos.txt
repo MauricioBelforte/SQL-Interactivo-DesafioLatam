@@ -1,0 +1,39 @@
+20/21 Seleccionando registros sin valores nulos
+
+Algunos registros pueden tener valores nulos para algunos de sus campos. Por ejemplo, podríamos tener una tabla de usuarios con nombres y emails pero no tener todos los nombres de cada uno de los registros como ilustra la siguiente tabla.
+
+id	Nombre		Email
+1	Juan Pérez	juan.perez@email.com
+2	María Gómez	maria.gomez@email.com
+3			carlos.diaz@email.com
+4			ana.torres@email.com
+5	Luis Méndez	luis.mendez@email.com
+
+Para seleccionar todos los valores no nulos utilizaremos IS NOT NULL
+
+Por ejemplo, en la tabla usuarios previamente mostrada podemos seleccionar todos los nombres no nulos utilizando SELECT * FROM empleados WHERE nombre IS NOT NULL;
+
+Esto nos devolverá todos los usuarios cuyo nombre no sea nulo.
+
+id	Nombre		Email
+1	Juan Pérez	juan.perez@email.com
+2	María Gómez	maria.gomez@email.com
+5	Luis Méndez	luis.mendez@email.com
+
+
+Ejercicio
+Se tiene una tabla productos con id, nombre, precio y descuento, siendo descuento de tipo integer.
+
+Selecciona todos los registros de la tabla productos cuyo campo descuento no sea nulo.
+
+RESOLUCIÓN:
+
+SELECT * FROM productos WHERE descuento IS NOT NULL;
+
+
+Resultado esperado
+id	nombre			precio	descuento
+1	Silla de Oficina	100	0
+3	Lámpara de Escritorio	50	10
+4	Monitor de Computadora		0
+5	Librero de Oficina	300	15

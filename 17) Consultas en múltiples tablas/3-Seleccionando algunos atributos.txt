@@ -1,0 +1,109 @@
+3/6 Seleccionando algunos atributos
+
+Ideas clave
+La cláusula JOIN nos permite combinar los datos de varias tablas en una única tabla de resultados.
+Para hacer la unión, debemos especificar las tablas que queremos unir y la condición de unión.
+Podemos seleccionar los datos de cada tabla que deseamos mostrar en la consulta.
+Seleccionando algunos atributos
+Al igual que cuando trabajamos con una sola tabla, podemos seleccionar sólo los atributos que deseamos mostrar en la consulta. Cuando tenemos dos tablas, podemos seleccionar todos los atributos de una tabla y sólo algunos de la otra de la siguiente forma:
+
+SELECT tabla1.*, 
+    tabla2.atributo1, 
+    tabla2.atributo2
+FROM tabla1
+JOIN tabla2 ON tabla1.id = tabla2.id;
+Si tenemos dos tablas como en los ejercicios anteriores:
+
+
+Tabla usuarios
+
+Email				Nombre			Edad
+juan.perez@example.com		Juan Pérez		30
+maria.gonzalez@example.com	Maria González		25
+john.doe@example.com		John Doe		40
+test.user@example.com		Test User		22
+
+
+Tabla datos_contacto
+
+Email				Teléfono
+juan.perez@example.com		555-123-4567
+maria.gonzalez@example.com	444-987-6543
+john.doe@example.com		777-555-8888
+test.user@example.com		111-222-3333
+juan.perez@example.com		999-888-7777
+maria.gonzalez@example.com	333-111-0000
+
+
+SELECT usuarios.*, datos_contacto.telefono 
+FROM usuarios 
+JOIN datos_contacto 
+ON usuarios.email = datos_contacto.email
+De esta forma, seleccionamos todo de la tabla usuarios y sólo los teléfonos de la tabla datos_contacto.
+
+Ejercicio
+Dadas las siguientes tablas:
+
+
+Tabla usuarios:
+
+email				nombre			edad
+juan.perez@example.com		Juan Pérez		30
+maria.gonzalez@example.com	Maria González		25
+john.doe@example.com		John Doe		40
+test.user@example.com		Test User		22
+
+
+Tabla notas:
+
+email				notas
+juan.perez@example.com		90
+maria.gonzalez@example.com	100
+john.doe@example.com		80
+test.user@example.com		0
+juan.perez@example.com		100
+maria.gonzalez@example.com	100
+
+
+Selecciona de la tabla usuarios el email, nombre y edad, y de la tabla notas sólo las notas. Une los registros de ambas tablas utilizando el email.
+
+SELECT 
+    usuarios.email, 
+    usuarios.nombre, 
+    usuarios.edad, 
+    notas.notas 
+FROM 
+    usuarios 
+JOIN 
+    notas 
+ON 
+    usuarios.email = notas.email;
+
+
+RESOLUCIÓN:
+
+Estaba resuelto al final ???
+
+SELECT 
+    usuarios.email, 
+    usuarios.nombre, 
+    usuarios.edad, 
+    notas.notas 
+FROM 
+    usuarios 
+JOIN 
+    notas 
+ON 
+    usuarios.email = notas.email;
+
+
+Resultado esperado
+
+email				nombre			edad	notas
+juan.perez@example.com		Juan Pérez		30	90
+maria.gonzalez@example.com	Maria González		25	100
+john.doe@example.com		John Doe		40	80
+test.user@example.com		Test User		22	0
+juan.perez@example.com		Juan Pérez		30	100
+maria.gonzalez@example.com	Maria González		25	100
+

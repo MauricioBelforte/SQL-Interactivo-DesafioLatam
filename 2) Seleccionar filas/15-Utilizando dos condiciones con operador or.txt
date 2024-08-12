@@ -1,0 +1,18 @@
+15/21 Utilizando dos condiciones con operador or
+
+Se tiene una tabla clientes con los campos id, nombre, ciudad y saldo. La ciudad es de tipo texto, el saldo es número entero.
+
+Selecciona aquellos clientes de la tabla clientes que sean de la ciudad 'Madrid' o que su saldo sea negativo.
+
+RESOLUCIÓN:
+SELECT * FROM clientes WHERE ciudad= 'Madrid' OR saldo<0;
+
+
+Resultado esperado
+
+id	nombre		ciudad		saldo
+1	Juan Pérez	Madrid		1000
+2	María López	Barcelona	-500
+3	Pedro García	Madrid		0
+4	Ana Martínez	Sevilla		-200
+5	Luis Rodríguez	Madrid		1500

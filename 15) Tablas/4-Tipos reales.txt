@@ -1,0 +1,41 @@
+4/6 Tipos reales
+
+
+Hasta el momento hemos visto los siguientes tipos de datos:
+
+TEXT para almacenar texto
+INTEGER para almacenar números enteros
+BOOLEAN para almacenar valores de verdadero o falso
+DATE para almacenar fechas
+En este ejercicio veremos el tipo de dato REAL, que permite almacenar números con decimales.
+
+Ejercicio
+Crea una tabla llamada temperaturas con la columna temperatura_celsius:
+
+Columna	Tipo de dato
+temperatura_celsius	real
+Luego inserta los siguientes registros:
+
+temperatura_celsius
+23.4
+26.5
+27.1
+Importante. Para ingresar la parte decimal de los números, utiliza el punto (.) como separador decimal
+
+
+RESOLUCIÓN:
+
+CREATE TABLE temperaturas (temperatura_celsius REAL);
+
+INSERT INTO temperaturas (temperatura_celsius) VALUES (23.4);
+INSERT INTO temperaturas (temperatura_celsius) VALUES (26.5);
+INSERT INTO temperaturas (temperatura_celsius) VALUES (27.1);
+
+
+
+Resultado esperado
+
+temperatura_celsius
+		23.4
+		26.5
+		27.1

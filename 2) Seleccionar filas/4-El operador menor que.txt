@@ -1,0 +1,23 @@
+4/21 El operador menor que
+
+El operador menor que (<) se utiliza para comparar valores y seleccionar filas donde el valor de una columna sea estrictamente menor que un valor específico. Este operador es útil cuando queremos filtrar registros y obtener aquellos que tienen un valor menor a un límite determinado.
+
+Por ejemplo, si tenemos una tabla de productos con las columnas col1, col2 y col3, podemos utilizar la siguiente consulta para seleccionar todas las columnas donde el valor de col1 sea menor a 10:
+
+SELECT * FROM productos WHERE col1 < 10;
+
+Ejercicio
+Se tiene una tabla usuarios con las columnas id, nombre, apellido, email y telefono. Selecciona todas los registros de la tabla usuarios donde el valor de la columna id sea menor a 3.
+
+
+RESOLUCIÓN:
+
+SELECT * FROM usuarios WHERE id<3;
+
+
+Resultado esperado
+
+id	nombre	apellido	email				telefono
+1	Juan	Pérez		juanperez@gmail.com		555-1234
+2	María	García		mariagarcia@hotmail.com		555-5678
+

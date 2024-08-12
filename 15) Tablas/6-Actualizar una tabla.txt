@@ -1,0 +1,50 @@
+6/6 Actualizar una tabla
+
+En este ejercicio aprenderemos a añadir una columna a una tabla existente. Para ello, utilizaremos la sentencia ALTER TABLE, que nos permite modificar la definición de una tabla.
+
+La sintaxis para lograrlo es la siguiente:
+
+ALTER TABLE nombre_tabla ADD COLUMN nombre_columna tipo_dato;
+donde tenemos que especificar el nombre de la tabla existente, el nombre de la columna nueva y el tipo de dato que utilizaremos.
+
+Por ejemplo si tenemos la tabla personas con las columnas nombre y apellido, y queremos agregar la columna edad de tipo INTEGER, podemos hacerlo de la siguiente manera:
+
+ALTER TABLE personas ADD COLUMN edad INTEGER;
+
+Ejercicio
+En este ejercicio, vamos a modificar la tabla productos para agregar la columna descripcion de tipo TEXT.
+
+Actualmente la tabla productos tiene las siguientes columnas:
+
+Columna		Tipo de dato
+nombre		TEXT
+precio		REAL
+
+Luego de crearla deberás insertar los siguientes registros:
+
+nombre		precio		descripcion
+Camisa		1000.00		Camisa de manga corta
+Pantalón	2000.00		Pantalón de mezclilla
+Camisa XL	1000.00		Camisa de manga larga
+
+Importante: para poder ingresar las queries requeridas, recuerda añadir punto y coma al final de cada una.
+
+
+
+RESOLUCIÓN:
+
+ALTER TABLE productos ADD COLUMN descripcion TEXT;
+
+INSERT INTO productos (nombre, precio, descripcion) VALUES ('Camisa', 1000.00, 'Camisa de manga corta');
+INSERT INTO productos (nombre,precio,descripcion) VALUES ('Pantalón', 2000.00, 'Pantalón de mezclilla');
+INSERT INTO productos (nombre,precio,descripcion) VALUES ('Camisa XL',1000.00, 'Camisa de manga larga');
+
+
+
+Resultado esperado
+
+nombre		precio	descripcion
+Valor Antiguo	500	
+Camisa		1000	Camisa de manga corta
+Pantalón	2000	Pantalón de mezclilla
+Camisa XL	1000	Camisa de manga larga

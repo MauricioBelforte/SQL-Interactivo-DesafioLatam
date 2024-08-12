@@ -1,0 +1,51 @@
+5/5 Editar múltiples columnas
+
+En SQL es posible editar múltiples columnas de un registro utilizando la cláusula SET. Para lograrlo, debemos especificar el nombre de cada columna que queremos modificar, seguido del nuevo valor que queremos asignarle.
+
+UPDATE tabla 
+  SET 
+    columna1 = 'nuevo_valor',
+    columna2 = 'nuevo_valor',
+    columna3 = 'nuevo_valor'
+  WHERE 
+    condicion;
+UPDATE usuarios 
+  SET 
+    nombre = 'Juan', 
+    apellido = 'Pérez'
+  WHERE 
+    id = 1;
+También es posible escribir la consulta en una sola línea, pero es recomendable utilizar saltos de línea para mejorar la legibilidad del código.
+
+Ejercicio
+Se tiene una tabla de posts con las siguientes columnas:
+
+Columna		Tipo de dato
+id		INTEGER
+titulo		TEXT
+contenido	TEXT
+autor		TEXT
+fecha		TEXT
+
+Edita el post con id 1 para que tenga el título "Aprendiendo SQL" y el contenido "SQL es un lenguaje de programación para gestionar bases de datos relacionales".
+
+
+RESOLUCIÓN:
+UPDATE posts
+  SET
+    titulo="Aprendiendo SQL",
+    contenido= "SQL es un lenguaje de programación para gestionar bases de datos relacionales"
+  WHERE
+    id=1
+
+
+Resultado esperado
+id	titulo			contenido			autor			fecha
+1	Aprendiendo SQL		SQL es un lenguaje de 		Autor 1			2022-01-01
+				programación para 
+				gestionar bases de 
+				datos relacionales					
+2	Post 2			Contenido del post 2		Autor 2			2022-01-02
+3	Post 3			Contenido del post 3		Autor 3			2022-01-03
+4	Post 4			Contenido del post 4		Autor 4			2022-01-04
+5	Post 5			Contenido del post 5		Autor 5			2022-01-05

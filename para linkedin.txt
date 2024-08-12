@@ -1,0 +1,94 @@
+¡Claro! Aquí tienes la correspondencia de los ítems con los certificados:
+
+1. **Seleccionar columnas (7 / 7)** - Consultas Básicas
+2. **Seleccionar filas (21 / 21)** - Consultas Básicas
+3. **Ordenar resultados (7 / 7)** - Consultas Básicas
+4. **Limitar resultados (3 / 3)** - Consultas Básicas
+5. **Operaciones con strings (10 / 10)** - Consultas Básicas
+6. **Operaciones con fechas (7 / 7)** - Consultas Básicas
+
+7. **Funciones de agregación (10 / 10)** - Consultas sobre datos agrupados
+
+8. **Distinct (6 / 6)** - Consultas Básicas
+
+9. **Introducción a grupos (11 / 11)** - Consultas sobre datos agrupados
+10. **Having (6 / 6)** - Consultas sobre datos agrupados
+
+11. **Subconsultas (9 / 9)** - Combinaciones y Subconsultas
+12. **Combinación de consultas (5 / 5)** - Combinaciones y Subconsultas
+
+13. **Inserción de registros (10 / 10)** - Inserción, edición y eliminación de registros
+14. **Borrado y modificación de registros (5 / 5)** - Inserción, edición y eliminación de registros
+
+15. **Tablas (6 / 6)** - Tablas y Fundamentos de Integridad de Datos
+16. **Restricciones (11 / 11)** - Tablas y Fundamentos de Integridad de Datos
+
+17. **Consultas en múltiples tablas (3 / 6)** - Consultas sobre múltiples tablas
+18. **Cardinalidad (0 / 6)** - Consultas sobre múltiples tablas
+
+19. **Tipos de join (0 / 20)** - Tipos de Join
+
+20. **Normalización (0 / 7)** - Normalización
+
+¿Hay algo más en lo que pueda ayudarte?
+
+Origen: Conversación con Copilot 12/8/2024
+(1) SELECCIONAR FILAS Y COLUMNAS - EXCELFULL.COM. https://excelfull.com/excel/seleccionar-filas-y-columnas/.
+(2) Cómo Ordenar De Filas A Columnas En Excel — Portal Excel. https://portalexcel.com/como-ordenar-de-filas-a-columnas-en-excel/.
+(3) Cómo seleccionar filas y columnas en Excel - Aprender Excel. https://excelaprender.com/como-seleccionar-filas-y-columnas-en-excel/.
+(4) Práctica de Subconsultas SQL: 15 Ejercicios con Soluciones. https://learnsql.es/blog/practica-de-subconsultas-sql-15-ejercicios-con-soluciones/.
+(5) Guía para principiantes de la subconsulta SQL | LearnSQL.es. https://learnsql.es/blog/guia-para-principiantes-de-la-subconsulta-sql/.
+(6) Subconsultas SQL | LearnSQL.es. https://learnsql.es/blog/subconsultas-sql/.
+(7) Datos agrupados (estadística) - Probabilidad y Estadística. https://www.probabilidadyestadistica.net/datos-agrupados/.
+(8) Unidad 06. Consultas sobre varias tablas. Composición interna y cruzada.. https://josejuansanchez.org/bd/unidad-06/index.html.
+
+
+
+
+1. SELECCIONAR COLUMNAS (7 / 7)
+   1. Tutorial
+   2. Seleccionar todas las columnas de una tabla
+   3. Seleccionar una columna de la tabla
+   4. Seleccionar múltiples columnas de una tabla
+   5. Asignar un alias a una columna con “AS”
+   6. Asignar alias a múltiples columnas con “AS”.md
+   7. Asignar un alias con AS y comillas dobles
+
+2. SELECCIONAR FILAS (21 / 21)
+   1. El operador "mayor que"
+   2. El operador "mayor que" parte 2
+   3. Operador "mayor o igual que"
+   4. El operador "menor que"
+   5. El operador "menor o igual que"
+   6. Seleccionando múltiples filas bajo una condición
+   7. Seleccionando filas bajo una condición de igualdad
+   8. Seleccionando filas bajo una condición de igualdad (tipo de dato string)
+   9. Seleccionando filas bajo una condición de igualdad (tipo de dato string) parte 2
+   10. Seleccionando filas bajo una condición de igualdad (tipo de dato booleano true)
+   11. Seleccionando filas bajo una condición de igualdad (tipo de dato booleano false)
+   12. Utilizando dos condiciones con operador "and"
+   13. Utilizando dos condiciones con operador "and" parte 2
+   14. Utilizando operador "OR"
+   15. Utilizando dos condiciones con operador "or"
+   16. Seleccionando una fecha
+   17. Seleccionando datos entre dos valores con "between"
+   18. Seleccionando filas con "like"
+   19. Seleccionando con comodín al principio
+   20. Seleccionando registros sin valores nulos
+   21. Seleccionando registros con valores nulos
+
+3. ORDENAR RESULTADOS (7 / 7)
+   1. Ordenando filas
+   2. Ordenando filas asc explícito
+   3. Ordenando filas desc
+   4. Ordenando filas con valores nulos
+   5. Ordenando con nulos al final
+   6. Combinaciones de orden
+   7. Combinaciones de orden asc y desc
+
+
+6005 983 135
+7639 580 576
+
+nedakraguic@gmail.com
+

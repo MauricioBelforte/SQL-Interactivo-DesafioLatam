@@ -1,0 +1,28 @@
+2/7 Ordenando filas asc explicito
+
+Con la claúsula ORDER BY podemos especificar la dirección de los resultados. Se puede ordenar en orden ascendente (ASC) o descendente (DESC).
+
+En el ejercicio anterior aprendimos que implícitamente (si no lo indicamos en la consulta) los resultados se ordenan de menor a mayor, es decir, de forma ascendente. Para hacer nuestras consultas claras en su intención, indicaremos la dirección al momento de hacer la consulta:
+
+SELECT * FROM productos ORDER BY precio ASC;
+
+Con esta consulta obtendremos el mismo resultado que utilizando:
+
+SELECT * FROM productos ORDER BY precio;
+
+Ejercicio
+En este ejercicio se tiene una tabla usuarios con los campos id, nombre, apellido, email y teléfono. Se te pide ordenar los registros de la tabla 'usuarios' por el campo 'nombre' en orden ascendente.
+
+
+RESOLUCIÓN:
+
+SELECT * FROM usuarios ORDER BY nombre ASC;
+
+Resultado esperado
+
+id	nombre	apellido	email				telefono
+5	Jorge	Martínez	jorgemartinez@gmail.com		555-4321
+1	Juan	Pérez		juanperez@gmail.com		555-1234
+4	Lucía	Sánchez		luciasanchez@outlook.com	555-5555
+2	María	García		mariagarcia@hotmail.com		555-5678
+3	Pedro	López		pedrolopez@yahoo.com		555-9876

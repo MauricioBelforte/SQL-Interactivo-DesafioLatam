@@ -1,0 +1,35 @@
+3/6 Tablas con distintos tipos de datos
+
+Adicionalmente a los datos de tipo Texto podemos utilizar otros tipos de datos, en este ejercicio abordaremos los 3 siguientes tipos.
+
+INTEGER para almacenar números enteros
+BOOLEAN para almacenar valores de verdadero o falso
+DATE para almacenar fechas
+Ejercicio
+Crea una tabla llamada usuarios con las siguientes columnas:
+
+Columna		Tipo de dato
+nombre		text
+apellido	text
+edad		integer
+activo		boolean
+nacimiento	date
+
+Luego inserta un registro dentro de la tabla creada utilizado los siguientes datos:
+
+nombre: Lucía
+apellido: Sánchez
+edad: 25
+activo: true
+nacimiento: 1996-01-01
+Pista: para poder ingresar las dos queries requeridas, recuerda añadir punto y coma al final de cada una.
+
+
+RESOLUCIÓN:
+CREATE TABLE usuarios (nombre TEXT, apellido TEXT, edad INTEGER, activo BOOLEAN, nacimiento DATE);
+INSERT INTO usuarios (nombre, apellido, edad, activo, nacimiento) VALUES ('Lucía','Sánchez',25,true,'1996-01-01')
+
+
+Resultado esperado
+nombre	apellido	edad	activo		nacimiento
+Lucía	Sánchez		25	1		1996-01-01

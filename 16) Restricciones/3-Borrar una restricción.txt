@@ -1,0 +1,60 @@
+3/11 Borrar una restricción
+
+Ideas clave
+Las restricciones o constraints en inglés, son reglas que se pueden aplicar a las columnas de una tabla.
+Así como se pueden agregar restricciones a las columnas, también se pueden borrar.
+Borrar una restricción de una tabla existente
+Para borrar una restricción de una tabla existente en SQLite, se debe seguir un procedimiento similar al de agregar una restricción.
+
+Crear una nueva tabla sin la restricción.
+Copiar los datos de la tabla original a la nueva tabla.
+Borrar la tabla original.
+Renombrar la nueva tabla con el nombre de la tabla original.
+Para el ejemplo tendremos una tabla llamada temperaturas con la siguiente estructura:
+
+Columna	Tipo de dato	Restricciones
+temperatura	REAL	NOT NULL
+
+/* 1. Creamos la nueva tabla sin la restricción */
+CREATE TABLE temperaturas2 (
+    temperatura REAL 
+);
+/* 2. Copiamos los datos de la tabla original a la nueva tabla */
+INSERT INTO temperaturas2 (temperatura)
+    SELECT temperatura
+    FROM temperaturas;
+3
+
+/* 3. Borramos la tabla original */
+DROP TABLE temperaturas;
+4
+
+/* 4. Renombramos la nueva tabla con el nombre de la tabla original */
+ALTER TABLE temperaturas2 RENAME TO temperaturas;
+
+Ejercicio
+Se tiene una tabla llamada personas con las siguientes columnas:
+
+Columna		Tipo de dato	Restricciones
+nombre		TEXT		NOT NULL
+apellido	TEXT		NOT NULL
+edad		INTEGER	
+
+
+Se pide borrar la restricción de not null de las columnas nombre y apellido.
+
+
+RESOLUCIÓN:
+
+CREATE TABLE personas2 (nombre TEXT, apellido TEXT, edad INTEGER);
+
+INSERT INTO personas2 (nombre,apellido,edad) SELECT * FROM personas;
+
+DROP TABLE personas;
+
+ALTER TABLE personas2 RENAME TO personas;
+
+
+Resultado esperado
+sql
+CREATE TABLE "personas" ( nombre TEXT, apellido TEXT, edad INTEGER )

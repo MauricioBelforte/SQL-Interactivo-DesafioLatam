@@ -1,0 +1,64 @@
+5/11 Restricciones con check
+
+
+Ideas clave
+Existen distintos tipos de restricciones que se pueden aplicar a las columnas de una tabla.
+La restricción de no nulidad, o NOT NULL, impide que se ingresen valores nulos en una columna.
+La restricción de unicidad, o UNIQUE, nos permite evitar duplicados en una columna específica.
+La restricción CHECK nos permite establecer una condición que los valores de una columna deben cumplir.
+Restricciones CHECK
+La restricción CHECK nos permite establecer una condición que los valores de una columna deben cumplir. Por ejemplo, si queremos que el salario de los empleados sea mayor a cero, podemos agregar una restricción de CHECK a la columna salario.
+
+Para agregar una restricción de CHECK simplemente tenemos que especificarlo en la definición de la columna, proporcionando la condición que debe cumplir el valor de la columna. Por ejemplo:
+
+CREATE TABLE empleados (
+    nombre TEXT,
+    salario REAL CHECK (salario > 0)
+);
+Query	Funciona
+INSERT INTO empleados (nombre, salario) VALUES ('Juan', 3000);	Funciona
+INSERT INTO empleados (nombre, salario) VALUES ('Ana', -3000);	No funciona, error: CHECK constraint failed: empleados
+INSERT INTO empleados (nombre, salario) VALUES ('Luis', 3000);	Funciona
+
+Ejercicio
+En este ejercicio, vamos a crear una tabla llamada productos con las siguientes columnas:
+
+Columna	Tipo de dato	Restricciones
+nombre	TEXT		NOT NULL
+precio	REAL		NOT NULL
+stock	INTEGER		CHECK (stock >= 0)
+
+Luego, vamos a insertar los siguientes registros:
+
+nombre		precio		stock
+Camisa		1000.00		10
+Pantalón	2000.00		5
+Camisa XL	1000.00		3
+
+Pista: para poder ingresar las dos queries requeridas, recuerda añadir punto y coma al final de cada una.
+
+Si quieres probar un insert para observar el error puedes hacerlo ingresando un stock negativo.
+
+
+RESOLUCIÓN:
+
+CREATE TABLE productos (
+    nombre TEXT NOT NULL,
+    precio REAL NOT NULL,
+    stock INTEGER CHECK (stock>=0)
+);
+
+INSERT INTO productos (nombre,precio,stock) VALUES ('Camisa',1000,10);
+INSERT INTO productos (nombre,precio,stock) VALUES ('Pantalón',2000,5);
+INSERT INTO productos (nombre,precio,stock) VALUES ('Camisa XL',1000,3);
+
+
+Resultado esperado
+
+nombre		precio	stock
+Camisa		1000	10
+Pantalón	2000	5
+Camisa XL	1000	3
+
+
+

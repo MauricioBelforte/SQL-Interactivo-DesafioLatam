@@ -1,0 +1,20 @@
+13/21 Utilizando dos condiciones con operador and parte 2
+
+Ejercicio
+Se tiene una tabla llamada productos que tiene los campos id, nombre, agotado y precio. La columna precio es de tipo Integer mientras que la columna agotado es de tipo Boolean.
+
+Selecciona los productos de la tabla productos que estén agotados y tengan un precio mayor a 100.
+
+
+RESOLUCIÓN:
+
+SELECT * FROM productos WHERE agotado = 1 AND precio >100;
+O
+SELECT * FROM productos WHERE agotado = TRUE AND precio >100;
+
+
+Resultado esperado
+
+id	nombre		agotado	precio
+1	Producto A	1	120.5
+3	Producto C	1	150

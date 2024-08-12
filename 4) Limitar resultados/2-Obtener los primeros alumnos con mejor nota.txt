@@ -1,0 +1,19 @@
+2/3 Obtener los primeros alumnos con mejor nota
+
+
+En SQL, la combinación de las cláusulas ORDER BY y LIMIT nos permite obtener el valor o valores máximos de una columna en una tabla.
+
+Una vez que hemos ordenado los registros, podemos utilizar la cláusula LIMIT para limitar la cantidad de resultados obtenidos. Por ejemplo: SELECT * FROM notas ORDER BY nota DESC LIMIT 3 corresponderán a los tres alumnos con las mejores notas en la tabla 'notas'.
+
+Ejercicio
+Se tiene una tabla de puntajes con las columnas id y puntaje. Utiliza lo aprendido para obtener el puntaje más alto de la tabla utilizando ORDER BY y LIMIT
+
+
+RESOLUCIÓN: 
+
+SELECT puntaje FROM puntajes ORDER BY puntaje DESC LIMIT 1;
+
+
+Resultado esperado
+puntaje
+100

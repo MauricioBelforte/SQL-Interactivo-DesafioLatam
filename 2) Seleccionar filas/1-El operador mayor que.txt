@@ -1,0 +1,30 @@
+1/21 El operador mayor que >
+
+
+La cláusula WHERE en SQL se utiliza para filtrar los registros de una tabla según una condición específica.
+
+Por ejemplo, si disponemos de una tabla llamada "productos" con la columna precio, podemos recuperar todas las filas en las que el precio sea mayor a 100.
+
+SELECT * FROM productos WHERE precio > 100;
+
+Cuando se utiliza where, se utiliza en conjunto con un operador que nos ayuda a comparar los datos. En el ejemplo anterior se utilizó el operador mayor que (>)
+
+Un detalle importante es que las claúsulas tienen un orden.
+
+select,
+from
+where
+Si cambiamos el orden de estas claúsulas obtendremos un error de sintaxis.
+
+Ejercicio
+Se tiene una tabla llamada productos, con las columnas id, nombre, precio y descuento. Selecciona todos los registros cuyo descuento sea mayor a 10.
+
+
+RESOLUCIÓN:
+SELECT * FROM productos WHERE descuento > 10;
+
+
+Resultado esperado
+
+id	nombre			precio	descuento
+5	Librero de Oficina	300	15

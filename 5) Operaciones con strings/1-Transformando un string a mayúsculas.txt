@@ -1,0 +1,32 @@
+1/10 Transformando un string a mayúsculas
+
+Para transformar un string a mayúsculas en SQLITE podemos utilizar la función UPPER().
+
+Por ejemplo, si tenemos una tabla de usuarios con el campo 'nombre', podemos seleccionar todos los nombres transformándolos a mayúsculas utilizando la siguiente consulta:
+
+SELECT UPPER(nombre) FROM usuarios;
+
+Esto nos devolverá una lista de todos los nombres en la tabla 'usuarios', pero en mayúsculas. La función UPPER() no modifica los datos en la tabla, sólo los transforma para los resultados de la consulta.
+
+Al utilizar funciones de este tipo, será frecuente que renombremos la columna utilizando un alias.
+
+SELECT UPPER(nombre) as nombre_en_mayus FROM usuarios;
+
+Ejercicio
+Se tiene una tabla de usuarios con las columnas nombre, apellido, email y teléfono.
+
+Selecciona los emails de la tabla usuarios con el alias email_upper. Todos los emails deben ser mostrados en mayúsculas.
+
+
+RESOLUCIÓN:
+
+SELECT UPPER(email) AS email_upper FROM usuarios;
+
+Resultado esperado
+
+email_upper
+JUANPEREZ@GMAIL.COM
+MARIAGARCIA@HOTMAIL.COM
+PEDROLOPEZ@YAHOO.COM
+LUCIASANCHEZ@OUTLOOK.COM
+JORGEMARTINEZ@GMAIL.COM

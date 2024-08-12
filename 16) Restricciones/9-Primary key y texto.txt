@@ -1,0 +1,51 @@
+9/11 Primary key y texto
+
+La clave primaria no está limitada exclusivamente a valores numéricos; también se pueden utilizar datos de texto. Tomemos, por ejemplo, una tabla de personas, donde podríamos emplear la dirección de correo electrónico como clave primaria, ya que cada individuo posee una dirección de correo única.
+
+En SQLite, los campos que son de tipo INTEGER y se designan como PRIMARY KEY no pueden contener valores nulos. No obstante, a diferencia de otros sistemas de gestión de bases de datos como MySQL o PostgreSQL, cuando se utiliza PRIMARY KEY con tipos de datos como texto u otros, se permite que el valor sea nulo.
+
+Por lo tanto, si queremos que un campo sea tanto clave primaria como no nulo, debemos especificarlo mediante la combinación de PRIMARY KEY y NOT NULL.
+
+Ejemplo:
+
+CREATE TABLE posts (
+    title text primary key not null
+)
+
+Ejercicio
+Crea una tabla llamada personas con las siguientes columnas:
+
+Column Name	Data Type	Constraints
+email		TEXT		PRIMARY KEY NOT NULL
+nombre		TEXT	
+apellido	TEXT	
+
+
+Inserta los siguientes registros:
+
+email			nombre	apellido
+example1@example.com	John	Doe
+example2@example.com	Jane	Smith
+example3@example.com	Mike	Johnson
+Puedes probar usando el mismo email en dos registros diferentes para que observes como se comporta la restricción.
+
+
+RESOLUCIÓN:
+
+CREATE TABLE personas (
+    email TEXT PRIMARY KEY NOT NULL,
+    nombre TEXT,
+    apellido TEXT
+);
+
+INSERT INTO personas (email,nombre,apellido) VALUES ('example1@example.com','John','Doe');
+INSERT INTO personas (email,nombre,apellido) VALUES ('example2@example.com','Jane','Smith');
+INSERT INTO personas (email,nombre,apellido) VALUES ('example3@example.com','Mike','Johnson');
+
+
+Resultado esperado
+
+email			nombre	apellido
+example1@example.com	John	Doe
+example2@example.com	Jane	Smith
+example3@example.com	Mike	Johnson

@@ -1,0 +1,48 @@
+5/6 Borrar un tabla
+
+En SQL podemos utilizar el comando DROP TABLE para eliminar una tabla.
+
+Por ejemplo, si queremos eliminar la tabla temperaturas que creamos en el ejercicio anterior, podemos hacerlo con la siguiente query:
+
+DROP TABLE temperaturas;
+Si intentamos hacer un SELECT de la tabla temperaturas luego de eliminarla, obtendremos un error.
+
+Ejercicio
+En este ejercicio tendremos una tabla con datos que no nos interesan, deberemos borrarla, crearla de nuevo y poblarla con los datos pedidos.
+
+Borra la tabla temperaturas y vuelve a crearla con las siguientes columnas:
+
+Columna	Tipo de dato
+ciudad		TEXT
+temperatura	REAL
+fecha		Date
+
+Luego, inserta los siguientes registros:
+
+ciudad		temperatura	fecha
+Buenos Aires	20.0		2024-01-01
+Buenos Aires	21.0		2024-01-02
+Santiago	22.0		2024-01-01
+Santiago	23.0		2024-01-02
+Importante: para poder ingresar las queries requeridas, recuerda añadir punto y coma al final de cada una.
+
+
+RESOLUCIÓN:
+
+DROP TABLE temperaturas;
+
+CREATE TABLE temperaturas (ciudad TEXT, temperatura REAL, fecha DATE);
+
+INSERT INTO temperaturas (ciudad, temperatura , fecha) VALUES ('Buenos Aires',20.0,'2024-01-01');
+INSERT INTO temperaturas (ciudad, temperatura , fecha) VALUES ('Buenos Aires',21.0,'2024-01-02');
+INSERT INTO temperaturas (ciudad, temperatura , fecha) VALUES ('Santiago',22.0,'2024-01-01');
+INSERT INTO temperaturas (ciudad, temperatura , fecha) VALUES ('Santiago',23.0,'2024-01-02');
+
+
+Resultado esperado
+
+ciudad		temperatura	fecha
+Buenos Aires	20		2024-01-01
+Buenos Aires	21		2024-01-02
+Santiago	22		2024-01-01
+Santiago	23		2024-01-02

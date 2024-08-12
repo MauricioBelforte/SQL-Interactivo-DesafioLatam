@@ -1,0 +1,62 @@
+1/11 Introducción a restricciones
+
+Ideas clave
+Las restricciones o constraints en inglés, son reglas que se pueden aplicar a las columnas de una tabla.
+La restricción NOT NULL es un tipo de restricción que impide que se ingresen valores nulos en una columna.
+Si ingresamos un valor nulo en una columna con la restricción NOT NULL, la operación fallará.
+Añadir una restricción al crear una tabla
+Al crear tablas, podemos añadir restricciones (en inglés constraints) a las columnas para evitar que se ingresen datos que no cumplan ciertas condiciones.
+
+En este ejercicio, aprenderemos a agregar la restricción NOT NULL, que impide agregar valores nulos en una columna. Por ejemplo, al crear una tabla de personas con nombre y apellido, podemos hacer que el nombre sea obligatorio (no nulo) y el apellido opcional.
+
+Para lograrlo, crearemos la tabla y en la columna nombre agregaremos la restricción NOT NULL de la siguiente manera:
+
+CREATE TABLE personas (
+    nombre TEXT NOT NULL,
+    apellido TEXT
+)
+Para agregar una restricción, simplemente debemos especificarla junto con la columna.
+
+Para indicar las restricciones al diagramar una tabla, utilizaremos una columna adicional llamada Constraints. Ejemplo con la tabla personas:
+
+Column		Data Type	Constraints
+nombre		TEXT		NOT NULL
+apellido			TEXT	
+
+Pongamos a prueba nuestra restricción con distintas consultas y observemos los resultados.
+
+Query	Resultado
+INSERT INTO personas (nombre, apellido) VALUES ('Juan', 'Pérez');	Funciona
+INSERT INTO personas (nombre, apellido) VALUES (NULL, 'Pérez');	No funciona, error: NOT NULL constraint failed: personas.nombre
+INSERT INTO personas (apellido) VALUES ('Pérez');	No funciona, error: NOT NULL constraint failed: personas.nombre
+En resumen: en esta tabla que acabamos de crear, podremos hacer un insert de una persona con nombre y sin apellido, pero no podremos ingresar una persona sin nombre.
+
+Ejercicio
+Crea una nueva tabla llamada empleados con las siguientes columnas:
+
+Columna		Tipo de dato	Restricciones
+nombre		TEXT		NOT NULL
+apellido			TEXT	
+
+Luego ingresa los siguientes datos
+
+nombre: Pedro
+apellido: Pérez
+Puedes probar un insert sin un nombre para observar el error.
+
+
+RESOLUCIÓN:
+
+CREATE TABLE empleados (
+    nombre TEXT NOT NULL,
+    apellido TEXT
+    );
+
+INSERT INTO empleados (nombre,apellido) VALUES('Pedro','Pérez');
+
+
+Resultado esperado
+
+nombre	apellido
+Pedro	Pérez
+

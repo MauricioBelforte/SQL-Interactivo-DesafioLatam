@@ -1,0 +1,31 @@
+2/5 Borrar un registro con where
+
+La sentencia DELETE se utiliza para eliminar datos de una tabla. Si queremos eliminar filas específicas en lugar de todos los datos de la tabla, podemos usar la cláusula WHERE junto con la sentencia DELETE. Esto nos permite especificar una condición para determinar qué filas se eliminarán.
+
+Por ejemplo, si tenemos una tabla de productos y queremos eliminar solo aquellos productos cuyo precio sea igual a 1000, podemos usar la siguiente consulta:
+
+DELETE FROM productos WHERE precio = 1000
+
+Ejercicio
+Dada la tabla usuarios con los siguientes datos:
+
+ID	NOMBRE	APELLIDO	EMAIL				TELEFONO
+1	Juan	Pérez		juanperez@gmail.com		555-1234
+2	María	García		mariagarcia@hotmail.com		555-5678
+3	Pedro	López		pedrolopez@yahoo.com		555-9876
+4	Lucía	Sánchez		luciasanchez@outlook.com	555-5555
+5	Jorge	Martínez	jorgemartinez@gmail.com		555-4321
+
+
+Borra el usuario cuyo id sea igual a 2.
+
+RESOLUCIÓN:
+DELETE FROM usuarios WHERE ID=2
+
+
+Resultado esperado
+ID	NOMBRE	APELLIDO	EMAIL				TELEFONO
+1	Juan	Pérez		juanperez@gmail.com		555-1234
+3	Pedro	López		pedrolopez@yahoo.com		555-9876
+4	Lucía	Sánchez		luciasanchez@outlook.com	555-5555
+5	Jorge	Martínez	jorgemartinez@gmail.com		555-4321

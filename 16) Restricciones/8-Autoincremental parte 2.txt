@@ -1,0 +1,72 @@
+8/11 Autoincremental parte 2
+
+
+Ideas clave
+Si un campo de clave primaria es un número entero, se convierte automáticamente en un campo autoincremental en SQLITE.
+Si se ingresa un registro con un valor mayor al de la secuencia actual, la base de datos se encarga de actualizar la secuencia para que el siguiente registro tenga un valor mayor al del registro que acabamos de insertar.
+Actualización de la secuencia
+Cuando tenemos campos autoincrementales en una tabla e insertamos un nuevo registro con un valor más alto que el de la secuencia actual, la base de datos se encarga de actualizar la secuencia para que el siguiente registro tenga un valor mayor al del registro que acabamos de insertar.
+
+Por ejemplo, si tenemos una tabla con los siguientes registros:
+
+id	nombre
+1	Ana
+2	Gonzalo
+3	Juan
+
+Luego insertamos un nuevo registro con un id mayor al de la secuencia actual:
+
+INSERT INTO usuarios (id, nombre) VALUES (10, 'María');
+Y luego insertamos un nuevo registro sin especificar el id:
+
+INSERT INTO usuarios (nombre) VALUES ('Pedro');
+Obtendremos la siguiente tabla:
+
+id	nombre
+1	Ana
+2	Gonzalo
+3	Juan
+10	María
+11	Pedro
+
+Ejercicio
+Crea una tabla llamada transacciones con las siguientes columnas:
+
+Columna	Tipo de dato	Restricciones
+id	INTEGER	PRIMARY KEY
+monto	REAL	NOT NULL
+fecha	DATE	
+
+Luego, vamos a insertar los siguientes registros:
+
+id	monto		fecha
+	1000.00		2024-01-01
+	2000.00		2024-01-02
+	3000.00		2024-01-03
+10	4000.00		2024-01-04
+	5000.00		2024-01-05
+
+Importante: Al único campo que vamos a agregar un id de forma personalizada va a ser al cuarto registro, esto con el fin de observar la relación que se genera entre el campo incremental y cómo aumenta según el valor que insertemos.
+
+RESOLUCIÓN:
+
+CREATE TABLE transacciones (
+    id INTEGER PRIMARY KEY,
+    monto REAL NOT NULL,
+    fecha DATE
+);
+
+INSERT INTO transacciones (monto,fecha) VALUES (1000.00,'2024-01-01');
+INSERT INTO transacciones (monto,fecha) VALUES (2000.00,'2024-01-02');
+INSERT INTO transacciones (monto,fecha) VALUES (3000.00,'2024-01-03');
+INSERT INTO transacciones (id,monto,fecha) VALUES (10,4000.00,'2024-01-04');
+INSERT INTO transacciones (monto,fecha) VALUES (5000.00,'2024-01-05');
+
+
+Resultado esperado
+id	monto	fecha
+1	1000	2024-01-01
+2	2000	2024-01-02
+3	3000	2024-01-03
+10	4000	2024-01-04
+11	5000	2024-01-05

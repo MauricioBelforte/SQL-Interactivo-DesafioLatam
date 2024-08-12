@@ -1,0 +1,66 @@
+2/11 Agregar una restricción a una tabla existente
+
+Ideas clave
+Las restricciones o constraints en inglés son reglas que se pueden aplicar a las columnas de una tabla.
+Se puede agregar una restricción al momento de crear una tabla.
+En SQLite no se pueden agregar directamente restricciones a tablas ya creadas.
+Pero podemos lograrlo creando una nueva tabla con la restricción, copiando los datos de la tabla original a la nueva tabla, borrando la tabla original y renombrando la nueva tabla con el nombre de la tabla original.
+Agregar una restricción a una tabla existente
+Por ejemplo, si tenemos una tabla personas con las columnas nombre y apellido.
+
+Columna	Tipo de dato	Restricciones
+nombre		TEXT	
+apellido	TEXT	
+
+y queremos agregarle la restricción NOT NULL a la columna nombre.
+
+Lo que tenemos que hacer es:
+
+Crear una nueva tabla con la restricción.
+/* 1. Creamos la nueva tabla con la restricción */
+CREATE TABLE personas2 (
+    nombre TEXT NOT NULL,
+    apellido TEXT
+);
+Copiar los datos de la tabla original a la nueva tabla.
+/* 2. Copiamos los datos de la tabla original a la nueva tabla */
+INSERT INTO personas2 (nombre, apellido)
+    SELECT nombre, apellido
+    FROM personas;
+Borrar la tabla original.
+/* 3. Borramos la tabla original */
+DROP TABLE personas;
+Renombrar la nueva tabla con el nombre de la tabla original.
+/* 4. Renombramos la nueva tabla con el nombre de la tabla original */
+ALTER TABLE personas2 RENAME TO personas;
+En otros motores de bases de datos como PostgreSQL o MySQL si es posible agregar restricciones a tablas existente sin necesidad de crear una nueva tabla.
+
+Ejercicio
+Se tiene una tabla llamada patentes con las siguientes columnas:
+
+Columna	Tipo de dato	Restricciones
+patente	TEXT	
+
+Con la siguiente información:
+
+patente
+ABC123
+ABC124
+Se pide agregar una restricción de not null a la columna patente.
+
+
+
+RESOLUCIÓN:
+
+CREATE TABLE patentes2 (patente TEXT NOT NULL);
+
+INSERT INTO patentes2 (patente) SELECT patente FROM patentes;
+
+DROP TABLE patentes;
+
+ALTER TABLE patentes2 RENAME TO patentes;
+
+
+Resultado esperado
+sql
+CREATE TABLE "patentes" ( patente TEXT NOT NULL )

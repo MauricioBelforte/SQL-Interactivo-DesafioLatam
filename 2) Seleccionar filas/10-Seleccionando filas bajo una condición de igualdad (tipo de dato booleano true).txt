@@ -1,0 +1,35 @@
+10/21 Seleccionando filas bajo una condición de igualdad (tipo de dato booleano true)
+
+
+Hasta el momento hemos trabajado con dos tipos de datos: números enteros, como el precio del producto, y strings, como 'Camiseta'. En este ejercicio introduciremos el tipo de dato Boolean, el cual puede guardar como valor verdadero o falso, TRUE o FALSE.
+
+Supongamos que tenemos una tabla de productos con una columna 'destacado' de tipo booleano que indica si un producto está destacado o no. Para seleccionar todos los productos que están marcados como destacados, podemos usar la siguiente consulta:
+
+SELECT * FROM productos WHERE destacado = true;
+
+Adicionalmente se pueden ocupar los valores 1 y 0 en lugar de las palabras reservadas true o false, por ejemplo la siguiente consulta es identica a la anterior.
+
+SELECT * FROM productos WHERE destacado = 1;
+
+Ejercicio
+Se tiene una tabla de usuarios con los campos id, nombre, apellido, email, teléfono y status. La columna status es de tipo booleano.
+
+Selecciona todos los usuarios de la tabla usuarios cuyo status es activo.
+
+
+RESOLUCIÓN:
+
+SELECT * FROM usuarios WHERE status=TRUE;
+O
+SELECT * FROM usuarios WHERE status=1;
+O
+SELECT * FROM usuarios WHERE status=true;
+
+
+
+Resultado esperado
+
+id	nombre	apellido	email				telefono	status
+1	Juan	Pérez		juanperez@gmail.com		555-1234	1
+3	Pedro	López		pedrolopez@yahoo.com		555-9876	1
+4	Lucía	Sánchez		luciasanchez@outlook.com	555-5555	1

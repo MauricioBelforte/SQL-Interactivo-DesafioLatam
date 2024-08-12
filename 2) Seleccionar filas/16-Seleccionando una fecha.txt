@@ -1,0 +1,24 @@
+16/21 Seleccionando una fecha
+
+Otro tipo de dato es el de fecha, Date en inglés. Por defecto, las fechas se guardan en un formato YYYY-MM-DD, indicando primero el año en 4 dígitos, luego el mes con dos dígitos y finalmente el día con dos dígitos. Un ejemplo de una fecha en este formato sería 2022-01-01
+
+Sobre las fechas podemos hacer distinto tipo de operaciones, pero primero aprenderemos a utilizarlas para filtrar. Por ejemplo, podemos obtener todos los productos de una tabla cuya fecha sea mayor o igual al primero de enero de 2022:
+
+SELECT * FROM productos WHERE fecha_de_creación >= '2022-01-01';
+
+Ejercicio
+Se tiene una tabla de productos con los campos id, nombre, precio y fecha_de_creacion. El campo fecha_de_creacion es de tipo Date.
+
+Selecciona todos los productos de la tabla productos que fueron creados después de '2021-05-01'.
+
+
+RESOLUCIÓN:
+SELECT * FROM productos WHERE fecha_de_creacion>'2021-05-01';
+
+
+Resultado esperado
+
+id	nombre			precio	fecha_de_creacion
+1	Silla de Oficina	100	2022-01-05
+3	Lámpara de Escritorio	50	2022-02-10
+5	Librero de Oficina	300	2022-03-01

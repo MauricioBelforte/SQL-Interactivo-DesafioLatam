@@ -1,0 +1,78 @@
+10/11 Clave Foránea
+
+
+En este ejercicio introduciremos el concepto de clave foránea o foreign key.
+
+La clave foránea es una restricción que se le puede agregar a una columna de una tabla para indicar que los valores que se inserten en esa columna deben existir en otra tabla.
+
+Por ejemplo, si tenemos una tabla de personas y una tabla de autos, podríamos agregar una columna persona_id a la tabla de autos, y agregarle la restricción de clave foránea para indicar que el valor de esa columna debe existir en la tabla de personas. De esta forma nos aseguramos que no se inserten autos de personas que no existen o que se borren personas que tienen autos asignado a su nombre dejando autos sin dueño.
+
+personas
+
+Columna		Tipo de dato		Restricciones
+id		INTEGER			PRIMARY KEY
+nombre		TEXT	
+apellido	TEXT	
+autos
+
+Columna		Tipo de dato		Restricciones
+id		INTEGER			PRIMARY KEY
+patente		TEXT	
+persona_id	INTEGER			FOREIGN KEY (persona_id) REFERENCES personas(id)
+
+Con los siguientes datos:
+
+personas
+
+id	nombre	apellido
+1	John	Doe
+2	Jane	Smith
+
+
+autos
+
+id	patente	persona_id
+1	ABC123	1
+2	DEF456	2
+
+
+Podemos ver que el auto con patente ABC123 pertenece a la persona con id 1, y el auto con patente DEF456 pertenece a la persona con id 2. Adicionalmente la clave foránea nos asegura que no podamos borrar la persona con id 1 mientras exista un auto con persona_id 1. De la misma forma, no podremos insertar un auto con persona_id 3, ya que no existe una persona con id 3.
+
+Agregando la clave foránea
+Para agregar una clave foránea a una tabla existente, debemos especificar la restricción FOREIGN KEY seguida del nombre de la columna y la tabla a la que hace referencia, y finalmente la columna de la tabla a la que hace referencia.
+
+La sintaxis es la siguiente:
+
+ALTER TABLE nombre_tabla ADD COLUMN nombre_columna tipo_dato REFERENCES nombre_tabla_referencia(nombre_columna_referencia);
+Se ve complicado, pero veamos un ejemplo con las tablas personas y autos.
+
+ALTER TABLE autos ADD COLUMN persona_id INTEGER REFERENCES personas(id);
+La clave foránea debe hacer referencia a una columna que tenga una restricción de clave primaria
+
+Ejercicio
+Se tienen las tablas articulos y categorias con la siguiente estructura:
+
+articulos
+
+Columna		Tipo de dato	Restricciones
+id		INTEGER		PRIMARY KEY
+nombre		TEXT	
+precio		REAL	
+categorias
+
+Columna		Tipo de dato		Restricciones
+id		INTEGER			PRIMARY KEY
+nombre		TEXT	
+
+Se pide agregar una clave foránea a la tabla articulos para que la columna categoria_id haga referencia a la columna id de la tabla categorias.
+
+
+RESOLUCIÓN:
+
+ALTER TABLE articulos ADD COLUMN categoria_id INTEGER REFERENCES categorias(id);
+
+
+Resultado esperado
+sql
+CREATE TABLE articulos ( id INTEGER PRIMARY KEY, nombre TEXT, precio REAL , categoria_id INTEGER REFERENCES categorias(id))
+

@@ -1,0 +1,22 @@
+
+5/21 El operador "menor o igual que"
+
+
+Podemos utilizar el operador 'menor o igual que' (<=) en una condición para seleccionar registros en los que el valor de una columna sea menor o igual a un valor dado. Por ejemplo, si tenemos una tabla de productos con una columna 'precio', podemos seleccionar todos los productos cuyo precio sea menor o igual a x utilizando la consulta.
+
+SELECT * FROM productos WHERE precio <= x;
+
+Ejercicio
+Selecciona todos los registros de la tabla productos en los que el valor de la columna 'precio' sea menor o igual a 100.
+
+
+RESOLUCIÓN:
+
+SELECT * FROM productos WHERE precio<=100;
+
+
+
+Resultado esperado
+id	nombre			precio	descuento
+1	Silla de Oficina	100	0
+3	Lámpara de Escritorio	50	10

@@ -1,0 +1,24 @@
+12/21 Utilizando dos condiciones con operador and
+
+La claúsula WHERE se puede combinar con el operador AND para juntar múltiples condiciones en una consulta SQL. Por ejemplo, si queremos seleccionar todos los usuarios cuyo nombre es 'Juan' y apellido es 'Pérez', podemos utilizar la siguiente consulta:
+
+SELECT * FROM usuarios WHERE nombre = 'Juan' AND apellido = 'Pérez';
+
+Cuando se utiliza el operador AND se deben cumplir ambas condiciones, en este caso el nombre debe ser 'Juan' y el apellido debe ser Pérez. En caso de que cualquiera de ellos sea distinto, no se mostrará.
+
+Ejercicio
+Se tiene una tabla de usuarios con los campos id, nombre, apellido, email y teléfono.
+
+Selecciona todos los usuarios cuyo nombre es 'María' y su email es 'mariagarcia@hotmail.com' de la tabla de usuarios.
+
+
+
+RESOLUCIÓN:
+
+SELECT * FROM usuarios WHERE nombre='María' AND email= 'mariagarcia@hotmail.com' ;
+
+
+Resultado esperado
+
+id	nombre	apellido	email				telefono
+2	María	García		mariagarcia@hotmail.com		555-5678

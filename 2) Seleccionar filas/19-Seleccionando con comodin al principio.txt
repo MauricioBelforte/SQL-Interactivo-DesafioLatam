@@ -1,0 +1,21 @@
+19/21 Seleccionando con comodin al principio
+
+Supongamos que queremos buscar todos los usuarios cuyo nombre termine con la letra 's' en la tabla de usuarios. Podemos hacer esto utilizando la siguiente consulta:
+
+SELECT * FROM usuarios WHERE nombre LIKE '%s'
+
+En esta consulta, estamos utilizando la cláusula LIKE para buscar todos los nombres de usuarios que terminen con la letra 's'. El símbolo '%' es un comodín que representa cualquier cantidad de caracteres adicionales. En este caso, estamos utilizando '%' antes de la letra 's' para indicar que queremos buscar cualquier nombre que termine con 's' y tenga cualquier número de caracteres adicionales antes de ella.
+
+Ejercicio
+Selecciona todos los usuarios de la tabla usuarios cuyo nombre termine con la letra 'o'
+
+
+RESOLUCIÓN:
+
+SELECT * FROM usuarios WHERE nombre LIKE '%o';
+
+
+Resultado esperado
+
+id	nombre	apellido	email			telefono
+3	Pedro	López		pedrolopez@yahoo.com	555-9876

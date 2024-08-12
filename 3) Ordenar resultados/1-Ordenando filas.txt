@@ -1,0 +1,34 @@
+1/7 Ordenando filas
+
+En este ejercicio, aprenderemos a ordenar las filas de una tabla en SQL, y para esto, estudiaremos una nueva cláusula llamada ORDER BY.
+
+ORDER BY se utiliza para ordenar los resultados de una consulta según una o más columnas. Por defecto, se ordena de forma ascendente.
+
+Por ejemplo, si tenemos una tabla de productos con los campos 'id', 'nombre' y 'precio', podemos ordenar los productos por precio del menor al mayor con:
+
+SELECT * FROM productos ORDER BY precio;
+
+Es importante tener en cuenta que las claúsulas tienen que especificarse justo en este orden:
+
+SELECT
+FROM
+ORDER BY
+El orden de los resultados dependerá del tipo de dato: los números se ordenan de menor a mayor, los textos alfabéticamente y las fechas cronológicamente.
+
+Ejercicio
+Ordena los registros de la tabla usuarios por el campo 'nombre'
+
+
+RESOLUCIÓN:
+
+SELECT * FROM usuarios ORDER BY nombre;
+
+
+Resultado esperado
+
+id	nombre	apellido	email				telefono
+5	Jorge	Martínez	jorgemartinez@gmail.com		555-4321
+1	Juan	Pérez		juanperez@gmail.com		555-1234
+4	Lucía	Sánchez		luciasanchez@outlook.com	555-5555
+2	María	García		mariagarcia@hotmail.com		555-5678
+3	Pedro	López		pedrolopez@yahoo.com		555-9876

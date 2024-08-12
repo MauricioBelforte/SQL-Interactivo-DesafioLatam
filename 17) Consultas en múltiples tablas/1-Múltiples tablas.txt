@@ -1,0 +1,100 @@
+1/6 Múltiples tablas
+
+Ideas clave
+La cláusula JOIN permite combinar datos de varias tablas en una única tabla de resultados.
+Para realizar la unión, es necesario especificar las tablas que se desean unir y la condición de unión correspondiente.
+Combinando datos de múltiples tablas con la cláusula JOIN
+Cuando trabajamos con bases de datos relacionales, surge con frecuencia la necesidad de combinar datos de varias tablas.
+
+Veamos un ejemplo:
+
+
+Tabla usuarios
+
+email1				nombre			edad
+juan.perez@example.com		Juan Pérez		30
+maria.gonzalez@example.com	Maria González		25
+john.doe@example.com		John Doe		40
+test.user@example.com		Test User		22
+
+
+Tabla datos_contacto
+
+email2					Teléfono
+juan.perez@example.com			555-123-4567
+maria.gonzalez@example.com		444-987-6543
+john.doe@example.com			777-555-8888
+test.user@example.com			111-222-3333
+juan.perez@example.com			999-888-7777
+maria.gonzalez@example.com		333-111-0000
+
+
+Para obtener todos los email, nombre, edad y teléfono en una única tabla utilizaremos la cláusula JOIN.
+
+En nuestro ejemplo, podemos unir las tablas con la siguiente consulta:
+
+SELECT *
+FROM 
+    usuarios
+INNER JOIN 
+    datos_contacto
+ON 
+    email1 = email2;
+Para unir tablas tenemos que establecer una o más claves de unión. En este caso, lo que tienen en común ambas tablas es el email.
+
+Si aplicáramos la consulta anterior, obtendríamos:
+
+
+Email1				Nombre			Edad		Email2				Teléfono
+juan.perez@example.com		Juan Pérez		30		juan.perez@example.com		555-123-4567
+juan.perez@example.com		Juan Pérez		30		juan.perez@example.com		999-888-7777
+maria.gonzalez@example.com	Maria González		25		maria.gonzalez@example.com	444-987-6543
+maria.gonzalez@example.com	Maria González		25		maria.gonzalez@example.com	333-111-0000
+john.doe@example.com		John Doe		40		john.doe@example.com		777-555-8888
+test.user@example.com		Test User		22		test.user@example.com		111-222-3333
+
+
+Importante: Observemos que los registros de ambas tablas se han combinado en una única tabla de resultados.
+
+
+Ejercicio
+Utilizando lo aprendido, selecciona todos los usuarios junto a sus notas. Observa los resultados antes de avanzar.
+
+
+Tabla usuarios:
+
+email1				nombre			edad
+juan.perez@example.com		Juan Pérez		30
+maria.gonzalez@example.com	Maria González		25
+john.doe@example.com		John Doe		40
+test.user@example.com		Test User		22
+
+
+
+Tabla notas:
+
+email2				notas
+juan.perez@example.com		90
+maria.gonzalez@example.com	100
+john.doe@example.com		80
+test.user@example.com		0
+juan.perez@example.com		100
+maria.gonzalez@example.com	100
+
+
+RESOLUCIÓN:
+
+SELECT * FROM usuarios INNER JOIN notas ON email1=email2
+
+
+Resultado esperado
+
+email1				nombre			edad		email2				notas
+juan.perez@example.com		Juan Pérez		30		juan.perez@example.com		90
+maria.gonzalez@example.com	Maria González		25		maria.gonzalez@example.com	100
+john.doe@example.com		John Doe		40		john.doe@example.com		80
+test.user@example.com		Test User		22		test.user@example.com		0
+juan.perez@example.com		Juan Pérez		30		juan.perez@example.com		100
+maria.gonzalez@example.com	Maria González		25		maria.gonzalez@example.com	100
+
+

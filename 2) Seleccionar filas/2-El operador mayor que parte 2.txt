@@ -1,0 +1,15 @@
+2/21 El operador mayor que parte 2
+
+Se tiene una tabla llamada productos, con las columnas id, nombre, precio y descuento.
+
+Selecciona todos los registros cuyo precio sea mayor a 200.
+
+
+RESOLUCIÓN:
+SELECT * FROM productos WHERE precio>200;
+
+
+Resultado esperado
+
+id	nombre			precio	descuento
+5	Librero de Oficina	300	15

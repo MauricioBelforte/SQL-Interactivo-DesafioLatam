@@ -1,0 +1,26 @@
+1/3 Limitando la cantidad de resultados
+
+La cláusula LIMIT se utiliza para limitar la cantidad de resultados devueltos por una consulta. Esto es útil cuando sólo necesitamos ver una cierta cantidad de registros en lugar de todos los registros que cumplan con la condición de la consulta.
+
+Por ejemplo, si queremos obtener sólo los primeros 5 registros de una tabla, podemos usar la cláusula LIMIT de la siguiente manera:
+
+SELECT * FROM tabla LIMIT 5
+
+Esto devolverá sólo los primeros 5 registros de la tabla.
+
+La claúsula LIMIT se agrega al final de la consulta, por ejemplo
+
+SELECT * FROM tabla WHERE campo > 10 ORDER BY campo2 LIMIT 5
+
+Ejercicio
+Selecciona los primeros 3 usuarios de la tabla de usuarios según el id.
+
+RESOLUCIÓN:
+
+SELECT * FROM usuarios ORDER BY id LIMIT 3;
+
+Resultado esperado
+id	nombre	apellido	email				telefono
+1	Juan	Pérez		juanperez@gmail.com		555-1234
+2	María	García		mariagarcia@hotmail.com		555-5678
+3	Pedro	López		pedrolopez@yahoo.com		555-9876

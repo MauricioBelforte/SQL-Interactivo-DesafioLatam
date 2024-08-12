@@ -1,0 +1,65 @@
+4/11 Restricción unique 
+
+Ideas clave
+Existen distintos tipos de restricciones que se pueden aplicar a las columnas de una tabla.
+La restricción de unicidad, o UNIQUE, nos permite evitar duplicados en una columna específica.
+Restricción UNIQUE
+La restricción UNIQUE, nos permite evitar duplicados en una columna específica. Un caso muy popular de esta restricción es evitar personas con el mismo correo electrónico.
+
+Para agregar una restricción de UNIQUE simplemente tenemos que especificarla al crear la tabla. Por ejemplo, si queremos que el correo electrónico de las personas sea único, podemos crear la tabla de la siguiente manera:
+
+CREATE TABLE personas (
+    nombre text
+    apellido text
+    email text UNIQUE
+)
+Pongamos a prueba nuestra restricción con distintas consultas y observemos los resultados.
+
+Query	Funciona
+INSERT INTO personas (nombre, apellido, email) VALUES ('Juan', 'Pérez', 'juan.perez@email.com');	Funciona
+INSERT INTO personas (nombre, apellido, email) VALUES ('María', 'García', 'juan.perez@email.com');	No funciona, error: UNIQUE constraint failed: personas.email
+INSERT INTO personas (nombre, apellido, email) VALUES ('Pedro', 'Pérez', 'pedro.perez@email.com');	Funciona
+
+En resumen: En esta tabla que acabamos de crear, el correo electrónico de cada persona debe ser único; no podremos ingresar dos personas con el mismo correo electrónico.
+
+Ejercicio
+En este ejercicio, vamos a crear una tabla llamada productos con las siguientes columnas:
+
+Columna	Tipo de dato	Restricciones
+nombre	TEXT	NOT NULL
+codigo	TEXT	UNIQUE
+precio	REAL	NOT NULL
+
+Luego, vamos a insertar los siguientes registros:
+
+nombre		precio		codigo
+Camisa		1000.00		CAM-001
+Pantalón	2000.00		PAN-001
+Camisa XL	1000.00		CAM-002
+
+Pista: para poder ingresar las dos queries requeridas, recuerda añadir punto y coma al final de cada una.
+
+Si quieres probar un insert para observar el error puedes hacerlo con el código CAM-001.
+
+
+RESOLUCIÓN:
+
+CREATE TABLE productos (
+    nombre TEXT NOT NULL,
+    precio REAL NOT NULL,
+    codigo TEXT UNIQUE
+);
+
+INSERT INTO productos (nombre,precio, codigo) VALUES ('Camisa',1000.00,'CAM-001');
+INSERT INTO productos (nombre,precio, codigo) VALUES ('Pantalón',2000.00,'PAN-001');
+INSERT INTO productos (nombre,precio, codigo) VALUES ('Camisa XL',1000.00,'CAM-002');
+
+
+Resultado esperado
+
+nombre		precio	codigo
+Camisa		1000	CAM-001
+Pantalón	2000	PAN-001
+Camisa XL	1000	CAM-002
+
+

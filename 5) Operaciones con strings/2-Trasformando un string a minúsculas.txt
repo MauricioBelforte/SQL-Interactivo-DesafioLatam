@@ -1,0 +1,28 @@
+2/10 Trasformando un string a minúsculas
+
+
+La función LOWER() en SQLite se utiliza para convertir todos los caracteres de un texto a minúsculas. Por ejemplo, si tenemos una tabla 'usuarios' con un campo 'nombre' que contiene nombres en mayúsculas, podemos convertir todos los nombres a minúsculas utilizando la siguiente consulta:
+
+SELECT LOWER(nombre) AS nombre_minusculas FROM productos;
+
+Esto nos devolverá una lista de todos los nombres en la tabla 'usuarios', pero en minúsculas. La función LOWER() no modifica los datos en la tabla, sólo los transforma para los resultados de la consulta.
+
+Ejercicio
+Se tiene una tabla de usuarios con los campos id, nombre, e email. El campo email es de tipo texto y contiene algunas mayúsculas, lo que puede ocasionar errores en la base de datos.
+
+Selecciona los emails de la tabla usuarios con el alias email_lower. Todos los emails deben ser mostrados en minúsculas.
+
+
+RESOLUCIÓN:
+
+SELECT LOWER(email) AS email_lower FROM usuarios;
+
+
+Resultado esperado
+
+email_lower
+juan@example.com
+maria@example.com
+pedro@example.com
+ana@example.com
+luis@example.com

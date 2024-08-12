@@ -1,0 +1,24 @@
+11/21 Seleccionando filas bajo una condición de igualdad (tipo de dato booleano false)
+
+Supongamos que queremos seleccionar todos los usuarios cuyo status es inactivo en una tabla llamada 'usuarios'. Podemos hacer esto utilizando la siguiente consulta:
+
+SELECT * FROM usuarios WHERE status = false;
+
+En esta consulta, estamos utilizando la cláusula WHERE para buscar todos los usuarios que tengan el valor 'false' en la columna 'status'.
+
+Ejercicio
+Selecciona todos los productos de la tabla productos que no están destacados.
+
+
+RESOLUCIÓN:
+
+SELECT * FROM productos WHERE destacado= FALSE;
+
+
+
+Resultado esperado
+
+id	nombre		precio	destacado
+2	Producto 2	200	0
+3	Producto 3	150	0
+5	Producto 5	250	0

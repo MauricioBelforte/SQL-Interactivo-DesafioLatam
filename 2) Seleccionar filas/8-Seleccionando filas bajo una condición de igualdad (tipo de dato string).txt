@@ -1,0 +1,27 @@
+8/21 Seleccionando filas bajo una condición de igualdad (tipo de dato string)
+
+
+En SQL, para comparar textos debemos utilizar comillas simples (''). Por ejemplo, si tenemos una tabla productos con un producto con nombre Camiseta podemos seleccionarlo utilizando:
+
+SELECT * FROM productos WHERE nombre = 'Camiseta';
+
+Al comparar un string en una condición WHERE, debemos asegurarnos de encerrar el valor buscado entre comillas.
+
+¿Por qué debemos envolver los textos en comillas?
+
+Cuando envolvemos un texto entre comillas en SQL, estamos indicando que no se trata de una palabra clave ni de un nombre de tabla o columna, sino que es un valor que debe ser tomado literalmente.
+
+Ejercicio
+Selecciona todas las filas de la tabla productos donde el nombre del producto sea 'Pantalón'.
+
+
+
+RESOLUCIÓN:
+
+SELECT * FROM productos WHERE nombre='Pantalón';
+
+
+Resultado esperado
+
+id	nombre		precio	descuento
+2	Pantalón	30	5

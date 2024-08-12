@@ -1,0 +1,23 @@
+21/21 Seleccionando registros con valores nulos
+
+Así como podemos seleccionar valores no nulos, también podemos seleccionar valores nulos.
+
+Por ejemplo, si queremos encontrar todos los usuarios que no tengan un número de teléfono registrado en la tabla de usuarios, podemos utilizar la siguiente consulta:
+
+SELECT * FROM usuarios WHERE telefono IS NULL;
+
+Ejercicio
+Se tiene una tabla usuarios con id, nombre, apellido, email y teléfono
+
+Selecciona todos los usuarios que no tengan un email registrado en la tabla de usuarios.
+
+
+RESOLUCIÓN:
+
+SELECT * FROM usuarios WHERE email IS NULL;
+
+
+Resultado esperado
+id	nombre	apellido	email	telefono
+2	María	García			555-5678
+4	Lucía	Sánchez			555-5555

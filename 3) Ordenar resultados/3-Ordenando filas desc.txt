@@ -1,0 +1,23 @@
+3/7 Ordenando filas desc
+
+La cláusula ORDER BY se utiliza para ordenar los resultados de una consulta. Por defecto el orden es ascendente, pero se puede especificar que sea descendente utilizando la palabra clave DESC. Por ejemplo:
+
+SELECT * FROM productos ORDER BY precio DESC;
+
+Ejercicio
+Se tiene una tabla productos con los campos id, nombre, precio y stock. Selecciona sólo los precios de la tabla 'productos' ordenados de forma
+
+
+RESOLUCIÓN:
+
+SELECT precio FROM productos ORDER BY precio DESC;
+
+
+Resultado esperado
+
+precio
+300
+200
+150
+100
+50

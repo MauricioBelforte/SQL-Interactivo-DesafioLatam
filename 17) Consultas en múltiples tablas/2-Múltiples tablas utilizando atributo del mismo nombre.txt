@@ -1,0 +1,102 @@
+2/6 Múltiples tablas utilizando atributo del mismo nombre
+
+Ideas clave
+La cláusula JOIN nos permite combinar los datos de varias tablas en una única tabla de resultados.
+Para hacer la unión debemos especificar las tablas que queremos unir y la condición de unión.
+Cuando la columna se llama igual en las dos tablas, tenemos que especificar el nombre de la tabla para evitar ambigüedad.
+Múltiples tablas: consecuencia de tener atributos con el mismo nombre
+En el ejercicio anterior realizamos un JOIN entre dos tablas donde una de ellas tenía un atributo llamado email1 y la otra email2. En este ejercicio trabajaremos con un problema del mismo tipo, pero donde en las dos tablas el atributo se llama igual.
+
+Para ejemplificar esto, utilizaremos el nombre email en ambas tablas.
+
+
+Tabla usuarios:
+
+email				nombre			edad
+juan.perez@example.com		Juan Pérez		30
+maria.gonzalez@example.com	Maria González		25
+john.doe@example.com		John Doe		40
+test.user@example.com		Test User		22
+
+
+Tabla datos_contacto:
+
+email				teléfono
+juan.perez@example.com		555-123-4567
+maria.gonzalez@example.com	444-987-6543
+john.doe@example.com		777-555-8888
+test.user@example.com		111-222-3333
+juan.perez@example.com		999-888-7777
+maria.gonzalez@example.com	333-111-0000
+
+
+Si intentamos probar la consulta anterior obtendremos:
+
+SELECT *
+FROM 
+    usuarios
+JOIN
+    datos_contacto
+ON
+    email = email;
+SQLITE_ERROR: sqlite3 result code 1: ambiguous column name: email
+Y esto se debe a que SQL no sabe a cuál email nos referimos en la condición de unión. Para solucionar esto, debemos especificar el nombre de la tabla al que pertenece el atributo.
+
+Resolviendo la ambigüedad
+Para arreglar esto NO tenemos que cambiarle el nombre a la columna, simplemente tenemos que especificar a qué tabla pertenece el atributo. Por ejemplo, podemos hacer lo siguiente:
+
+SELECT * 
+FROM 
+    usuarios 
+JOIN 
+    datos_contacto 
+ON 
+    usuarios.email = datos_contacto.email
+De esta forma, SQL puede entender a cuál email nos referimos en cada situación.
+
+Alias
+En SQL, podemos utilizar alias para referirnos a las tablas de una forma más corta. Por ejemplo, si queremos referirnos a la tabla usuarios como u y a la tabla datos_contacto como dc, podemos hacer lo siguiente:
+
+SELECT * 
+FROM 
+    usuarios u
+JOIN 
+    datos_contacto dc 
+ON 
+    u.email = dc.email
+
+
+
+Ejercicio
+Utilizando lo aprendido, selecciona todos los usuarios junto a sus notas. Recuerda que para especificar la clave de unión debes utilizar el nombre de la tabla para evitar ambigüedad. Observa los resultados antes de avanzar.
+
+
+Tabla usuarios:
+
+email				nombre			edad
+juan.perez@example.com		Juan Pérez		30
+maria.gonzalez@example.com	Maria González		25
+john.doe@example.com		John Doe		40
+test.user@example.com		Test User		22
+
+
+Tabla notas:
+
+email				notas
+juan.perez@example.com		90
+maria.gonzalez@example.com	100
+john.doe@example.com		80
+test.user@example.com		0
+juan.perez@example.com		100
+maria.gonzalez@example.com	100
+
+
+RESOLUCIÓN:
+
+SELECT * FROM usuarios INNER JOIN notas ON usuarios.email=notas.email
+
+O usando alias
+
+SELECT * FROM usuarios u INNER JOIN notas n ON u.email=n.email
+
+

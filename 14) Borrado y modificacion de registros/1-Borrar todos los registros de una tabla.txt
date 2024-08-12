@@ -1,0 +1,13 @@
+1/5 Borrar todos los registros de una tabla
+
+Borrar todos los registros de una tabla
+En SQL, la cláusula DELETE se utiliza para eliminar registros de una tabla. Cuando se ejecuta la instrucción DELETE FROM nombre_tabla, se eliminan todos los registros de la tabla especificada.
+
+Es importante tener en cuenta que esta operación es irreversible y eliminará permanentemente los datos de la tabla, por lo que debes tener mucho cuidado al usar esta instrucción.
+
+Ejercicios
+Borra todos los datos de la tabla 'productos'.
+
+
+RESOLUCIÓN:
+DELETE FROM productos
